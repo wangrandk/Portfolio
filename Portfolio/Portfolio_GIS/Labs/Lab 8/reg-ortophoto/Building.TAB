@@ -1,0 +1,16 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 4
+    buildingNr Char (10) ;
+    function Integer ;
+    teachingFacilities Logical ;
+    areaGEOMETRY Float ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "b6328f9b-ce9a-40d8-802c-dd06c44fae53"
+end_metadata

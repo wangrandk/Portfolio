@@ -1,0 +1,25 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 4
+    NAVN Char (12) ;
+    DATATYPE Char (9) ;
+    BESKRIVELSE Char (71) ;
+    TABELLER Char (26) ;
+ReadOnly
+begin_metadata
+"\Produkt:" = "TOP10DK Version 1.3"
+"\IsReadOnly" = "FALSE"
+"\Område:" = "Københavns Amt"
+"\Projektion:" = "UTM Zone 32, ED50"
+"\Udtrukket af base den:" = "2-12-1997"
+"\Leveret den:" = "19-12-1997"
+"\Leveret til:" = "Københavns Amt"
+"\Copyright:" = "Kort & Matrikelstyrelsen"
+"\Adresse:" = "Rentemestervej 8"
+"\Postdistrikt:" = "2400 København NV"
+"\Telefon:" = "35 87 50 50"
+end_metadata

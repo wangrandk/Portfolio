@@ -1,0 +1,28 @@
+!table
+!version 500
+!charset WindowsLatin1
+
+Definition Table
+  File "elevation3_KOTE02.ers"
+  Type "RASTER"
+  (719942.5,6186922.5) (0,433) Label "Pt 1",
+  (719942.5,6189087.5) (0,0) Label "Pt 2",
+  (721567.5,6186922.5) (325,433) Label "Pt 3",
+  (721567.5,6189087.5) (325,0) Label "Pt 4"
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0 Bounds (-7746230.6469, -9998287.38389) (8746230.6469, 9998287.38389)
+  Units "m"
+  RasterStyle 6 1
+begin_metadata
+"\Encom" = ""
+"\Encom\Grid" = ""
+"\Encom\Grid\Display" = ""
+"\Encom\Grid\Display\Type" = "1"
+"\Encom\Grid\Display\Min Cell Value To Colour" = "26.063881"
+"\Encom\Grid\Display\Max Cell Value To Colour" = "47.500000"
+"\Encom\Grid\Display\LUT" = "BluSteel.CLR"
+"\Encom\Grid\Display\SunHighlight" = "0"
+"\Encom\Grid\Display\SunShading" = "0"
+"\Encom\Grid\Display\MinCellValue" = "26.063881"
+"\Encom\Grid\Display\MaxCellValue" = "47.500000"
+"\IsReadOnly" = "FALSE"
+end_metadata

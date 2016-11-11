@@ -1,0 +1,7 @@
+Fields {level, sum(ObjectLen(obj, "km"))"Length_km"}
+Tables {Road}
+Where {}
+Group {level}
+Order {2 desc}
+Into {RoadLength}
+Browse

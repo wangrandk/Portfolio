@@ -1,0 +1,186 @@
+!Workspace
+!Version  950
+!Charset WindowsLatin1
+Open Table "SF_GROUP" As SF_GROUP Interactive
+Open Table "SF_STRT1" As SF_STRT1 Hide Interactive
+Open Table "SF_STRT2" As SF_STRT2 Hide Interactive
+Open Table "SF_STRTS.TAB" As SF_STRTS Interactive
+Open Table "SFGTRL00" As SFGTRL00 Interactive
+Open Table "SF_BAY" As SF_BAY Interactive
+Open Table "SF_BACK" As SF_BACK Interactive
+Open Table "hospital" As hospital Interactive
+Open Table "Buffer" As Buffer Interactive
+Open Table "sites" As sites Interactive
+Open Table "4_sites" As _4_sites Interactive
+Add Column "SF_GROUP" (TPA98_0_4_TPA98_5_9_TPA9810_14_) From SFGTRL00 Set To TPA98_0_4+TPA98_5_9+TPA9810_14+TPA9815_17 Where COL1 = COL9  Dynamic
+Add Column "SF_GROUP" (TPA98_0_4___TPA98_5_9___TPA9810) From SFGTRL00 Set To TPA98_0_4+TPA98_5_9+TPA9810_14+TPA9815_17 Where COL1 = COL9  Dynamic
+Add Column "SF_GROUP" (YCOORD Decimal (9, 4)) From SFGTRL00 Set To YCOORD Where COL1 = COL9  Dynamic
+Add Column "SF_GROUP" (YCOORD_2 Decimal (9, 4)) From SFGTRL00 Set To YCOORD Where COL1 = COL9  Dynamic
+Add Column "SF_GROUP" (TPA9855_59___TPA9860_64___TPA98) From SFGTRL00 Set To TPA9855_59+TPA9860_64+TPA9865_74+TPA98_75P Where COL1 = COL9  Dynamic
+Select *  from hospital  where class = "hospital"  into Query3 noselect  
+Select *  from sites  into Query1 noselect  order by potential_no  
+Select *  from sites  into Query2 noselect  order by potential_no  
+Select *  from sites  into Query4 noselect  order by potential_no  
+Select *  from sites  into Query5 order by potential_no  
+Select *  from _4_sites  into Query6 order by potential_no  
+Select *  from sites  into Query7 order by potential_no  
+Select *  from _4_sites  into Query8 order by potential_no  
+Map From _4_sites,sites,SF_GROUP,hospital,Buffer
+  ,SF_STRTS,SF_GROUP,SF_BAY,SF_BACK
+  Position (2.58333,3.1) Units "in"
+  Width 5.95833 Units "in" Height 2.84167 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 1, 62
+  Center (-122.4313267,37.75926538)
+  Zoom 14.81363355 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "degree"
+shade 7 with TPA98_0_4___TPA98_5_9___TPA9810 ranges apply all use all Brush (2,255,16777215) 
+  1: 250 Brush (2,255,16777215) Pen (1,2,0) ,
+  250: 500 Brush (2,65280,16777215) Pen (1,2,0) ,
+  500: 750 Brush (2,16776960,16777215) Pen (1,2,0) ,
+  750: 1000 Brush (2,16711935,16777215) Pen (1,2,0) ,
+  1000: 2250 Brush (2,16711680,16777215) Pen (1,2,0) 
+  default Brush (2,16777215,16777215) Pen (1,2,0) 
+  # use 0 round 10 inflect off Brush (2,16777215,16777215) at 2 by 0 color 1 # 
+shade 8 with TPA9855_59___TPA9860_64___TPA98 ranges apply all use all Brush (2,255,16777215) 
+  1: 250 Brush (2,255,16777215) Pen (1,2,0) ,
+  250: 500 Brush (2,65280,16777215) Pen (1,2,0) ,
+  500: 750 Brush (2,16776960,16777215) Pen (1,2,0) ,
+  750: 1000 Brush (2,16711935,16777215) Pen (1,2,0) ,
+  1000: 2250 Brush (2,16711680,16777215) Pen (1,2,0) 
+  default Brush (2,16777215,16777215) Pen (1,2,0) 
+  # use 0 round 10 inflect off Brush (2,16777215,16777215) at 2 by 0 color 1 # 
+Set Map
+  Layer 1
+    Display Global
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,18) Line (1,2,0) Font ("Arial",0,9,0)
+    Arrows On
+    Centroids On
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With id_no
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Off
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (32,65535,18) Line (1,2,0) Font ("Arial",0,9,0)
+    Arrows On
+    Centroids On
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With id_no
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 3
+    Display Off
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With BlockGroup
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 4
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Selectable Off
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With Name
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 5
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Selectable Off
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With ID
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 6
+    Display Off
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With Street
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 7
+    Display Value
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+  Layer 8
+    Display Off
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+  Layer 9
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With BlockGroup
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 10
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Selectable Off
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With Area
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 11
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Selectable Off
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With Cat
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set Map Layer 2 Editable
+set legend 
+  layer 7 
+    display on 
+    shades on 
+    symbols off 
+    lines off 
+    count on 
+    title "Population Over 55" Font ("Times New Roman",2,10,0)
+    subtitle "in San Francisco" Font ("Times New Roman",2,8,0)
+    ascending off 
+    ranges Font ("Times New Roman",0,8,0)
+      auto display on ,
+      ">=1 to <250" display on ,
+      ">=250 to <500" display on ,
+      ">=500 to <750" display on ,
+      ">=750 to >1,000" display on ,
+      ">=1,000 to <2,250" display on  
+set legend 
+  layer 8 
+    display on 
+    shades on 
+    symbols off 
+    lines off 
+    count on 
+    title "population under 18" Font ("Times New Roman",2,10,0)
+    subtitle "in San fransisco" Font ("Times New Roman",2,8,0)
+    ascending off 
+    ranges Font ("Times New Roman",0,8,0)
+      auto display on ,
+      ">=1 to <250" display on ,
+      ">=250 to <500" display on ,
+      ">=500 to <750" display on ,
+      ">=750 to <1000" display on ,
+      ">=1000 to < 2,250" display on  
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 9
+ Margins Left 0.165 Right 0.165 Top 0.165 Bottom 0.165 Units "in"
+Set Window FrontWindow() Export
+ TrueColor on Border on Dither halftone
+ Transparency Raster device Vector internal
+ Antialiasing on Threshold 0 MaskSize 2 Filter 2
+Browse * From SFGTRL00
+  Position (-3.59167,2.69167) Units "in"
+  Width 5.95 Units "in" Height 2.85 Units "in" 
+  Row 61 Column 0
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+set browse row 61 column 0
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1

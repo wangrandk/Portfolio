@@ -1,0 +1,33 @@
+DatasetHeader Begin
+	Version = "3.0"
+	DataSetType = ERStorage
+	DataType = Raster
+	ByteOrder = LSBFirst
+	CoordinateSpace Begin
+		Datum = "ED50"
+		Projection = "NUTM32"
+		CoordinateType = EN
+		Units = "METERS"
+		Rotation = 0:00:00.000
+	CoordinateSpace End
+	RasterInfo Begin
+		CellType = IEEE4ByteReal
+		RegistrationCellX = 0
+		RegistrationCellY = 0
+		NullCellValue = -1e+032
+		CellInfo Begin
+			Xdimension = 7.5
+			Ydimension = 7.5
+		CellInfo End
+		NrOfLines = 271
+		NrOfCellsPerLine = 217
+		RegistrationCoord Begin
+			Eastings = 719936.25
+			Northings = 6189018.75
+		RegistrationCoord End
+		NrOfBands = 1
+		BandId Begin
+			Value = "KOTE"
+		BandId End
+	RasterInfo End
+DatasetHeader End

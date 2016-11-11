@@ -1,0 +1,16 @@
+!table
+!version 450
+!charset WindowsLatin1
+
+Definition Table
+  Type XLS Titles Range "Sheet1!A2:D3"
+  Fields 4
+    City Char (11) ;
+    Latitude Float ;
+    Longitude Float ;
+    Elevation Float ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "ae77dcaf-8b8f-4b6a-ab9f-3a64b7865a29"
+end_metadata

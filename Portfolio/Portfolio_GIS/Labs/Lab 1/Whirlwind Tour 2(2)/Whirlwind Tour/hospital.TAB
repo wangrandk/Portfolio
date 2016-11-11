@@ -1,0 +1,10 @@
+!table
+!version 100
+FIELDS: 2
+    Name Char (50) Index 1
+    class Char (10)
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "9d5397d5-600b-47ab-bce1-1faa12b6797f"
+end_metadata

@@ -1,0 +1,2 @@
+*.ecw filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,333 @@
+!Workspace
+!Version 1251
+!Charset WindowsLatin1
+Open Table "reg-ortophoto\DDOby2003.TAB" As DDOby2003 Interactive
+Open Table "reg-ortophoto\Building" As Building Interactive
+Open Table "reg-ortophoto\ParkingLot" As ParkingLot Interactive
+Open Table "reg-ortophoto\BuildingFunction" As BuildingFunction Interactive
+Open Table "reg-ortophoto\Road" As Road Interactive
+Open Table "reg-ortophoto\BusStop" As BusStop Interactive
+Map From Road,ParkingLot,BusStop,Building,BuildingFunction,DDOby2003
+  Position (8.06667,1.6) Units "in"
+  Width 3.95833 Units "in" Height 3.58333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (721220.5055,6188316.733)
+  Zoom 1.024131657 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map Layer 0 Selectable
+Set Map
+  Layer 1
+    Display Global
+    Global Pen (1,1,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (7,2,65535) Font ("Arial",0,9,0)
+    Zoom (0, 100000) Units "mi" 
+    Label Line Simple Position Above Font ("Arial",1,10,255) Pen (1,2,0) 
+      With streetName
+      Follow Path Auto Off Overlap On Duplicates On PartialSegments On Offset 2
+      Visibility Zoom (0, 100000) Units "mi" AutoPosition On AutoSizes 4 AutoSizeStep 50 SuppressIfNoFit On AutoCallout On
+  Layer 2
+    Display Global
+    Global Pen (1,2,0) Brush (2,65280,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",1025,8,16777215) Pen (1,2,0) 
+      With areaGeometry
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+   Object 2 Anchor (721051.41029608366,6188397.8167223316) 
+   Object 1 Line Arrow Anchor (721038.25894630281,6188219.4011648651) 
+   Object 3 Anchor (721172.81803540804,6188528.0030706422) 
+  Layer 3
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Arrows On
+    Label Line None Position Right Font ("Arial",1,9,16777215) Pen (1,2,0) 
+      With busLine
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+   Object 1 Line Arrow Anchor (721257.46254619432,6188257.8945319299) Angle 259.3 
+   Object 2 Line Arrow Anchor (721216.85589594429,6188265.6366439508) Angle 258.5 
+   Object 3 Line Arrow Anchor (721260.29784811998,6188562.0140872467) Angle 266.3 
+   Object 4 Line Arrow Anchor (721302.69405985763,6188570.8672949169) Angle 265.7 
+  Layer 4
+    Display Global
+    Global Pen (1,2,0) Brush (2,255,16777215) Symbol (35,0,12) Line (7,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Center Font ("Arial",1,9,16777215) Pen (1,2,0) 
+      With buildingNr
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+   Object 8 Line Arrow Anchor (721166.9775304253,6188355.4233508781) 
+   Object 5 Line Arrow Anchor (721139.1929520251,6188192.9876168529) 
+   Object 1 Line Arrow Anchor (721120.10358077451,6188089.2031898703) 
+   Object 4 Line Arrow Anchor (721070.34242925397,6188168.0690497523) 
+   Object 2 Line Arrow Anchor (721029.43412484624,6188096.6261753738) 
+   Object 7 Line Arrow Anchor (721131.85276868357,6188387.5316498438) 
+   Object 10 Line Arrow Anchor (721166.95349500549,6188421.2126352387) 
+   Object 6 Line Arrow Anchor (721055.77693282429,6188323.2166033359) 
+   Object 9 Line Arrow Anchor (721079.22412973654,6188470.9344464829) 
+   Object 11 Line Arrow Anchor (721177.20346418524,6188475.2597018592) 
+   Object 13 Line Arrow Anchor (721079.20338587649,6188567.5003615525) 
+   Object 12 Line Arrow Anchor (721095.32222979353,6188602.5552042285) 
+   Object 3 Line Arrow Anchor (720971.00826703792,6188151.9692822145) 
+  Layer 5
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With instituter
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 6
+    Display Graphic
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+    Zoom (0.0016, 0.62) Units "mi" Off 
+  contrast 50 
+  brightness 50 
+  alpha 255 
+    transparency off 
+  color 0 
+    grayscale off 
+Set CoordSys Earth Projection 1, 28
+Set Map Layer 0 Editable
+Create Point (12.534063,55.785918)
+    Symbol (37,32896,36,"MapInfo Arrows",1,10) 
+Set CoordSys Earth
+Set Map Layer 5 Editable
+Set Map Label Selection Off 
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1
+Create Adornment  Type ScaleBar
+     Background Brush (1,16777215,16777215)  Pen (1,1,0)  
+     Size Width 2.001889 Height 1.646667 Units "cm" 
+     Position Fixed (6.408333, 5.633333) Units "in" 
+     Layout Fixed Position Geographic
+     BarType 2
+     Display Units "cm" 
+     Ground Units "m" 
+     BarLength 0.002485587375 
+     BarHeight 0.200000 
+     BarStyle Brush (2,0,16777215)  Pen (1,2,0)  Font ("Arial",0,8,0) 
+     Scale On
+     Auto On
+Browse * From ParkingLot
+  Position (3.175,2.04167) Units "in"
+  Width 6.51667 Units "in" Height 3.33333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1
+Set Window FrontWindow() Hide
+Browse * From Road
+  Position (3.8,2.875) Units "in"
+  Width 6.51667 Units "in" Height 3.33333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1
+Set Window FrontWindow() Hide
+Browse * From Road
+  Position (5.09167,3.18333) Units "in"
+  Width 7.79167 Units "in" Height 3.33333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Browse * From Building
+  Position (7.38333,3.925) Units "in"
+  Width 7.79167 Units "in" Height 3.33333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Browse * From BuildingFunction
+  Position (8.9,2.70833) Units "in"
+  Width 3.95833 Units "in" Height 3.58333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Layout Designer
+  Position (2.31667,3.04167) Units "in"
+  Width 6.525 Units "in" Height 3.33333 Units "in" 
+  Dim uniqueLayoutWin As Integer
+  uniqueLayoutWin = FrontWindow()
+  Dim restoreCoordSysString As String
+  restoreCoordSysString = "Set " + SessionInfo(1)
+  Set CoordSys Layout Units "in"
+  Set Layout Window uniqueLayoutWin Zoom 90 Center (6.73148,4.73508)
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Landscape Copies 1
+ Resolution 203
+ Papersize 258
+ Margins Left 0.1133 Right 0.1133 Top 0.1133 Bottom 0.1133 Units "in"
+Set Window FrontWindow() Export
+ TrueColor on Border on Dither halftone
+ Transparency Raster device Vector internal
+ Antialiasing on Threshold 0 MaskSize 2 Filter 2
+Map From Road,ParkingLot,BusStop,BuildingFunction,Building,DDOby2003
+  Position (1.07368,1.87553) Units "in"
+  Width 8.31429 Units "in" Height 6.36429 Units "in" 
+  Pen (1,2,0)  Priority 1 Into Window uniqueLayoutWin
+Set Window WindowID(0) Front
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (721220.5043,6188316.732)
+  Zoom 1.024131657 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Global
+    Global Pen (1,1,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (7,2,65535) Font ("Arial",0,9,0)
+    Zoom (0, 100000) Units "mi" 
+    Label Line Simple Position Above Font ("Arial",1,10,255) Pen (1,2,0) 
+      With streetName
+      Follow Path Auto Off Overlap On Duplicates On PartialSegments On Offset 2
+      Visibility Zoom (0, 100000) Units "mi" AutoPosition On AutoSizes 4 AutoSizeStep 50 SuppressIfNoFit On AutoCallout On
+  Layer 2
+    Display Global
+    Global Pen (1,2,0) Brush (2,65280,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",1025,8,16777215) Pen (1,2,0) 
+      With areaGeometry
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+   Object 2 Line Arrow Anchor (721051.41029608366,6188397.8167223316) 
+   Object 1 Line Arrow Anchor (721038.25894630281,6188219.4011648651) 
+   Object 3 Line Arrow Anchor (721172.81803540804,6188528.0030706422) 
+  Layer 3
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Arrows On
+    Label Line None Position Right Font ("Arial",1,9,16777215) Pen (1,2,0) 
+      With busLine
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+   Object 1 Line Arrow Anchor (721257.46254619432,6188257.8945319299) Angle 259.3 
+   Object 2 Line Arrow Anchor (721216.85589594429,6188265.6366439508) Angle 258.5 
+   Object 3 Line Arrow Anchor (721260.29784811998,6188562.0140872467) Angle 266.3 
+   Object 4 Line Arrow Anchor (721302.69405985763,6188570.8672949169) Angle 265.7 
+  Layer 4
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With instituter
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 5
+    Display Global
+    Global Pen (1,2,0) Brush (2,255,16777215) Symbol (35,0,12) Line (7,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Center Font ("Arial",1,9,16777215) Pen (1,2,0) 
+      With buildingNr
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+   Object 8 Line Arrow Anchor (721166.9775304253,6188355.4233508781) 
+   Object 5 Line Arrow Anchor (721139.1929520251,6188192.9876168529) 
+   Object 1 Line Arrow Anchor (721120.10358077451,6188089.2031898703) 
+   Object 4 Line Arrow Anchor (721070.34242925397,6188168.0690497523) 
+   Object 2 Line Arrow Anchor (721029.43412484624,6188096.6261753738) 
+   Object 7 Line Arrow Anchor (721131.85276868357,6188387.5316498438) 
+   Object 10 Line Arrow Anchor (721166.95349500549,6188421.2126352387) 
+   Object 6 Line Arrow Anchor (721055.77693282429,6188323.2166033359) 
+   Object 9 Line Arrow Anchor (721079.22412973654,6188470.9344464829) 
+   Object 11 Line Arrow Anchor (721177.20346418524,6188475.2597018592) 
+   Object 13 Line Arrow Anchor (721079.20338587649,6188567.5003615525) 
+   Object 12 Line Arrow Anchor (721095.32222979353,6188602.5552042285) 
+   Object 3 Line Arrow Anchor (720971.00826703792,6188151.9692822145) 
+  Layer 6
+    Display Graphic
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+    Zoom (0.0016, 0.62) Units "mi" Off 
+  contrast 50 
+  brightness 50 
+  alpha 255 
+    transparency off 
+  color 0 
+    grayscale off 
+Set CoordSys Earth Projection 1, 28
+Set Map Layer 0 Editable
+Create Point (12.536357,55.785734)
+    Symbol (37,32896,36,"MapInfo Arrows",1,10) 
+Set CoordSys Earth
+Set Map Layer 0 Editable
+Set Map Label Selection Off 
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1
+Create Designer Legend
+  Position (0,0) Units "in"
+  Width 0 Units "in" Height 0 Units "in" 
+  Custom
+  Default Frame Title "# Legend" Font ("Arial",0,10,0)
+  Default Frame Style "%" Font ("Arial",0,8,0)
+  Default Frame Line Width 36 Units "pt"
+  Default Frame Region Width 32 Units "pt"
+  Default Frame Region Height 14 Units "pt"
+  Default Frame Auto Font Size ON 
+  Frame From Layer 1
+    Position (7.26726,3.52765) Units "in"
+    Priority 2
+   Column Width 141.714
+    Title "Road Legend" Font ("Arial",0,10,0)
+    Using Column object FromMapCatalog OFF 
+    Style Font ("Arial",0,8,0)
+      Text "Line" Line Pen (7,2,65535) 
+  Frame From Layer 2
+    Position (7.26726,3.90405) Units "in"
+    Priority 3
+   Column Width 141.714
+    Title "ParkingLot Legend" Font ("Arial",0,10,0)
+    Using Column object FromMapCatalog OFF 
+    Style Font ("Arial",0,8,0)
+      Text "Region" Region Pen (1,2,0)  Brush (2,65280,16777215) 
+  Frame From Layer 3
+    Position (7.26726,4.33998) Units "in"
+    Priority 4
+   Column Width 141.714
+    Title "BusStop Legend" Font ("Arial",0,10,0)
+    Using Column object FromMapCatalog OFF 
+    Style Font ("Arial",0,8,0)
+      Text "Point" Symbol (35,16776960,12) 
+  Frame From Layer 4
+    Position (0,0) Units "in"
+    Priority 5
+   Column Width 50
+    Title "BuildingFunction Legend" Font ("Arial",0,10,0)
+    Using Column object FromMapCatalog OFF 
+    Style Font ("Arial",0,8,0)
+      Text "Line" Line Pen (1,2,0) 
+  Frame From Layer 5
+    Position (7.26726,4.77214) Units "in"
+    Priority 6
+   Column Width 141.714
+    Title "Building Legend" Font ("Arial",0,10,0)
+    Using Column object FromMapCatalog OFF 
+    Style Font ("Arial",0,8,0)
+      Text "Region" Region Pen (1,2,0)  Brush (2,255,16777215) 
+Create Adornment  Type ScaleBar
+     Background Brush (1,16777215,16777215)  Pen (1,1,0)  
+     Size Width 2.002563 Height 1.646667 Units "cm" 
+     Position Fixed (6.408000, 5.633000) Units "in" 
+     Layout Fixed Position Geographic
+     BarType 2
+     Display Units "cm" 
+     Ground Units "m" 
+     BarLength 0.002485587375 
+     BarHeight 0.200000 
+     BarStyle Brush (2,0,16777215)  Pen (1,2,0)  Font ("Arial",0,8,0) 
+     Scale On
+     Auto On
+  Set CoordSys Layout Units "in"
+Set Window uniqueLayoutWin Front
+  Add Image Frame Position (6.9772,2.3223) Units "in" Width 0.5729 Units "in" Height 0.8333 Units "in"   Priority 7
+    From File "C:\Users\RAN\Pictures\dtuLogo.jpg"
+Create Text Into Window uniqueLayoutWin 
+    "DTU LYNGBY CAMPUS "
+    (7.8153,2.3222) (9.0493,3.1847)
+    Font ("Arial Black",0,18,0)
+    Priority 8
+  Run Command restoreCoordSysString
+  Undim restoreCoordSysString
+  UnDim uniqueLayoutWin

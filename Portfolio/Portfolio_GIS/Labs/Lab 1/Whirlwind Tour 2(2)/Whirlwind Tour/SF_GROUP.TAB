@@ -1,0 +1,16 @@
+!table
+!version 100
+FIELDS: 8
+    BlockGroup Char (12) Index 1
+    St_FIPS Char (2)
+    Cnty_FIPS Char (3)
+    CT1 Char (6)
+    CT2 Char (7)
+    BG Char (1)
+    Pop_90 Decimal (9, 0) Index 2
+    HU_90 Decimal (9, 0)
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "345d7b43-38e2-4fe1-8052-87c4b39a024b"
+end_metadata

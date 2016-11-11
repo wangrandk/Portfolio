@@ -1,0 +1,83 @@
+			*****************************
+			*WHY NO INSTALLATION PROGRAM*
+			*****************************
+This INSTALL.TXT file replaces an install program which would have outdated too
+quickly because of the foreseen change from MS-WINDOWS 3.1 to MS-WINDOWS 4.0 and
+MS-WINDOWS NT. This  is why the user is requested to perform the "manual" installation
+described in this file.
+
+			**********************
+			*MINIMUM REQUIREMENTS*
+			**********************
+
+The programs contained in the VARIOWIN package will run on any PC with a 386, or above, 
+processor running MS-WINDOWS 3.1 or later. The coprocessor is strongly recommended
+because of the intensive computation performed within VARIOWIN.
+The package requires approximately 2 MB on a hard disk.
+
+			************************
+			*CONTENT OF THE RELEASE*
+			************************
+This is version 2.1 of the VARIOWIN package. The following files are included
+with this release :
+
+PREVARD2D.EXE	: Program constructing a 2D Pair Comparison File of any size
+VARIO2DP.EXE	: Program performing interactive Exploratory Variography
+MODEL.EXE	: Program performing interactive modeling of 2D (cross) variograms
+VARIOWIN.HLP	: Extensive help on line about variography
+NEWUSER.TXT	: Wellcome message for new users of VARIOWIN - Useful informations
+SAMPLES.DAT	: Medium size data set in 2D (470 data) which is the sample data
+		  set used in "An Introduction To Applied Geostatistics" by 
+		  ISAAKS E. & SRIVASTAVA R.M. Oxford University Press 1989
+EXAMPLE.DAT	: Small size data set in 2D (60 data) which is the sample data set
+		  distributed with the GEOEAS software. 
+GOSSAN2D.DAT	: Medium size data set (547 data) which is distributed by E.J. SIDES,
+		  ITC, Kanaalweg 3, 2628 EB Delft, The Netherlands, for a comparative 
+		  study on variogram modeling. This file contains composites of gold 
+		  samples from a mine in Southern Spain. Hole 236 & 558 have the same 
+		  Easting and Northing coordinates.
+
+			*********************************
+			*INSTALLING VARIOWIN VERSION 2.1*
+			*********************************
+
+1) Create a directory, C:\VARIOWIN would be fine, in which you will copy the file 
+   VARIOWIN.ZIP and the program PKUNZIP.EXE.
+
+2) Expand the files contained in VARIOWIN.ZIP with the following command :
+		C:\VARIOWIN\pkunzip -o variowin
+
+3) The zip file can now be deleted :
+		C:\VARIOWIN\del variowin.zip
+
+4) Move the help file VARIOWIN.HLP to your WINDOWS directory with the 
+   following command :
+		C:\VARIOWIN\move variowin.hlp c:\windows
+   (you can also use the FILE MANAGER within WINDOWS)
+   The help file must be in your WINDOWS directory if you want to access it
+   from within the VARIOWIN applications.  
+
+5) The help file requires the True Type font FENCES and MT EXTRA to display its 
+   content adequately. They could not be included in the release because they
+   are copyrighted by Microsoft. However, they are provided with most text
+   processors that come with an equation editor.
+   These font must be installed on your system using the FONTS program found
+   in the CONTROL PANEL under the MAIN group of the program manager. The dialog
+   box of this application will display an ADD... button which you should 
+   select. Then you will be able to browse through your directories :
+   1) go to the directory containing your fonts
+   2) select the FENCES (True Type) and the MT EXTRA (True Type) fonts
+      and click OK. Your WIN.INI file will be modified to take this new fonts 
+      into account. 
+
+6) A group VARIOWIN can now be created using the FILE | NEW menu item of the
+   PROGRAM MANAGER. The following items should be installed into this group :
+			C:\VARIOWIN\PREVAR2D.EXE
+			C:\VARIOWIN\VARIO2DP.EXE
+			C:\VARIOWIN\MODEL.EXE
+			C:\WINDOWS\VARIOWIN.HELP
+   (use the FILE | NEW menu item of the PROGRAM MANAGER or drag and drop the
+   items from the FILE MANAGER)
+
+		!!! VARIOWIN 2.1 should now be installed correctly !!!
+

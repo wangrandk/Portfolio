@@ -1,0 +1,26 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  File "elevation3_KOTE04_Legend.BIL"
+  Type "RASTER"
+  (0,100.000000) (0,0) Label "Pt 1",
+  (0.507813,100.000000) (1,0) Label "Pt 2",
+  (0,99.609375) (0,1) Label "Pt 3"
+  CoordSys NonEarth Units "mm" Bounds(-10,-10)(1000,1000)
+  Units "mm"
+begin_metadata
+"\Encom\Grid\Display\MinCellValue" = "0.000000"
+"\Encom\Grid\Display\MaxCellValue" = "255.000000"
+"\Encom\Grid\Display\Min Cell Value to Colour" = "0.000000"
+"\Encom\Grid\Display\Max Cell Value to Colour" = "255.000000"
+"\Encom\Grid\Display\Standard_Deviation" = "73.900271"
+"\IsReadonly" = "FALSE"
+"\Encom" = ""
+"\Encom\Module" = "Surfaces"
+"\Encom\Type" = "Image Legend"
+"\Encom\Source Grid" = "C:\Users\RAN\OneDrive\Documents\GeographicInformationSystems\Labs\Lab 10\cn(1)\elevation3_KOTE04.tab"
+"\Encom\Date" = "Tue Apr 28 16:20:26 2015"
+"\Encom\Grid\Display\SunShading" = "0"
+end_metadata

@@ -1,0 +1,198 @@
+rm(list=ls())
+#we first create the noisy data
+nx <- ny <-64
+ntot=nx*ny
+chess=matrix(nr=nx,nc=ny,data=1)
+
+for(i in 1:nx){
+  for(j in 1:ny){
+    if(floor((i-1)/8) %% 2 ==0 && floor((j-1)/8) %% 2 !=0)
+    {chess[i,j]=0}
+    if(floor((i-1)/8) %% 2 !=0 && floor((j-1)/8) %% 2 ==0)
+    {chess[i,j]=0}
+    
+  }
+}
+
+#settings
+betavec=c(0.5,1,1.5,2)
+nb=length(betavec)
+niter=100
+
+#function neighbours
+library(compiler)
+nbr <- function(x,i,j){
+  #Clockwise ordering. if 8 we start in north pixel.
+  nx=length(x[,1]); ny=length(x[1,])
+  if(i==1 && j==1) nbrs=c(x[1,2],x[2,2],x[2,1]) #left-down
+  if(i==1 && j==ny) nbrs=c(x[2,ny],x[2,ny-1],x[1,ny-1])#left-up
+  if(i==1 && j!=1 && j!=ny) nbrs=c(x[1,j+1],x[2,j+1]
+                                   ,x[2,j],x[2,j-1],x[1,j-1]) #left border
+  
+  if(i==nx && j==1) nbrs=c(x[nx-1,1],x[nx-1,2],x[nx,2])#right-down
+  if(i==nx && j==ny) nbrs=c(x[nx,ny-1],x[nx-1,ny-1],
+                            x[nx-1,ny])#right-up
+  if(i==nx && j!=1 && j!=ny) nbrs=c(x[nx,j-1],x[nx-1,j-1]
+                                    ,x[nx-1,j],x[nx-1,j+1],x[nx,j+1])#right border
+  
+  if(j==1 && i!=1 && i!=nx) nbrs=c(x[i-1,1],x[i-1,2]
+                                   ,x[i,2],x[i+1,2],x[i+1,1]) #down border
+  
+  if(j==ny && i!=1 && i!=nx) nbrs=c(x[i+1,ny],x[i+1,ny-1]
+                                    ,x[i,ny-1],x[i-1,ny-1],x[i-1,ny]) #up border
+  #inner point 8 neigbhours first is north and then clockwise
+  if(i!=1 && i!=nx && j!=1 && j!=ny) nbrs=c(x[i,j+1],x[i+1,j+1]
+                                            ,x[i+1,j],x[i+1,j-1],x[i,j-1],x[i-1,j-1],x[i-1,j],x[i-1,j+1])
+  
+  return(nbrs)  
+}
+neighbours <- cmpfun(nbr)
+
+#function Potts, normalised?!?!
+g <- function(x,i,j,beta){
+  xneig=neighbours(x,i,j)
+  nneig=length(xneig)
+  match=0
+  for(k in 1:nneig){match <-ifelse(xneig[k]==x[i,j],match+1,match)}
+  c=(exp(beta*match)+exp(beta*(nneig-match)))
+  sol=exp(beta*match)/c
+  return(sol)
+}
+
+library(compiler)
+prior <- cmpfun(g)
+
+sigma=0.5 # I just did that in find_sigma_noise.R
+#add noise with sigma=0.5
+set.seed(3)
+noisy.chess=chess+rnorm(ntot,0,0.5)
+x <-noisy.chess
+
+#we need a binary image to operate with prior. Lets do that
+#we will use noisy.chess in the sampling distribution
+for(i in 1:nx){
+  for(j in 1:ny){
+    x[i,j] <- ifelse(x[i,j]>0.5,1,0)  
+  }
+}
+
+x0 <- x #binarized image first element of the chain
+
+#initializing things for the bucle
+#z=matrix(nr=nx,nc=ny,)
+# mass=matrix(nr=niter,nc=nb,data=NA)
+# mass[1,]=sum(x)/ntot;
+# y=matrix(nx,ny,data=NA)
+# WrongPixels=matrix(nr=niter,nc=nb,data=NA)
+# WrongPixels[1,]=rep(sum(x0!=chess),nb)
+
+mass=matrix(nr=niter,nc=1,data=NA)
+mass[1,]=sum(x)/ntot;
+y=matrix(nx,ny,data=NA)
+WrongPixels=matrix(nr=niter,nc=1,data=NA)
+WrongPixels[1,]=rep(sum(x0!=dew),1)
+
+ptm <- proc.time()
+png("Denoise_chess_iter100_beta0.5.png",height= 800, width=600)
+par(mfrow=c(4,3),pty = "s",mex=.7,pin=c(1.9,1.9),cex=0.7) 
+#png("ising1_inter1to10.png")
+
+#for(b in 1:nb){
+beta=betavec[1]
+x <- x0
+
+image(seq(0,1,l=nx),seq(0,1,l=ny),x0,
+      main=paste("Chain Starter","WrngPix",WrongPixels[1,1]),
+      xlab="x",ylab="y",
+      col=c("white","black"))
+
+# for(b in 1:nb){
+  beta=betavec[1]
+  x <- x0
+
+for(t in 2:niter){
+  print(c("beta=",as.character(beta),"time= ",as.character(t)))
+  for(i in 1:nx){
+    for(j in 1:ny){
+      #we operate in each pixel every iteration
+      # binary images: candidate opposite value
+      # unequivoity :: q(xcand)/q(x[i,j])=1?
+      xcand=1-x[i,j]
+      clone=x;clone[i,j]=xcand
+      
+      #we target the posterior p(x|y) \prop p(y|x) p(x) 
+      #p(x)=prior encoded up
+      #p(y|X=x)=Thats N(x,sigma) Y are our candidates :)!!
+      
+      
+      #compute the ratio R=f(xcand)*q(x)/f(x)*q(xcand)
+      R=prior(clone,i,j,beta)/prior(x,i,j,beta)
+      R=R*dnorm(noisy.chess,xcand,sigma)/
+        dnorm(noisy.chess,x[i,j],sigma)
+      #the probability p
+      p=min(1,R)
+      # toss an unfair coin to decide if candidate is accepted
+      accept <- rbinom(n=1,size=1,prob=p)
+      y[i,j] <- ifelse(accept==1, xcand, x[i,j])      
+      
+    }
+    
+  }
+  #all the pixels have change this iteration, we put y on x
+  x=y
+  mass[t,]=sum(x)/ntot # total mass of black points
+  WrongPixels[t,]=sum(x!=chess)
+  #if(t %% 100 == 0) {z[,,cont]=y;cont=con
+  #Evolutionplot
+  if(t %% (niter/10) ==0){ #time to see the changes
+#     par(mfrow=c(1,2))     
+#     image(seq(0,1,l=nx),seq(0,1,l=ny),x0,
+#           main=paste("Chain Starter","WrngPix",WrongPixels[1,b]),
+#           xlab="x",ylab="y",
+#           col=c("white","black"))
+    
+    image(seq(0,1,l=nx),seq(0,1,l=ny),x,
+          main=paste("time ",t,"WrngPix",WrongPixels[t,1]),
+          xlab="x",ylab="y", 
+          col=c("white","black"))  
+     cat ("Press [enter] to continue")
+     line <- readline()        
+  }
+}
+}
+ dev.off() 
+  
+#png("chess_beta1.png")
+#layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
+#image(seq(0,1,l=nx),seq(0,1,l=ny),chess,
+#      main="Original Image",
+#      xlab="",ylab="",
+#      col=c("white","black"))
+#image(seq(0,1,l=nx),seq(0,1,l=ny),noisy.chess,
+#      main=paste("Noisy Image",niter),
+#      xlab="x",ylab="y",
+#      col=terrain.colors(8))
+#image(seq(0,1,l=nx),seq(0,1,l=ny),x0,
+#      main="Binarization of Noisy Image",
+#      xlab="",ylab="",
+#      col=c("white","black"))
+#image(seq(0,1,l=nx),seq(0,1,l=ny),x,
+#      main=paste("Reconstruction t=100, beta=",beta),
+#      xlab="",ylab="",
+#      col=c("white","black"))
+#dev.off()
+
+png("chess_MassWrngPix.png",height=300)
+par(mfrow=c(1,2)) 
+plot(seq(1,niter,1),c(0,rep(1,niter-1)),type='n',
+     main='mass of blacks (ones)', xlab='iter',ylab='mass')
+for(b in 1:nb){lines(seq(1,niter,1),mass[,b],type='l',col=b,lwd=1.5)}
+# legend
+txt2=c("beta=0.5","beta=1.0","beta=1.5","beta=2.0")
+legend("topright",txt2, col=c(1,2,3,4),lty=c(1,1,1,1),cex=0.78)
+
+plot(seq(1,niter,1),c(0,rep(0.2,niter-1)),type='n',
+     main='wrong pixels', xlab='iter',ylab='#/ntot')
+for(b in 1:nb){lines(seq(1,niter,1),
+                     WrongPixels[,b]/ntot,type='l',col=b,lwd=1.5)}
+dev.off()

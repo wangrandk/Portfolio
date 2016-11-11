@@ -1,0 +1,13 @@
+Marital	Caffeine	Number
+Married	n	652
+Married	l	1537
+Married	m	598
+Married	h	242
+Prev.	n	36
+Prev.	l	46
+Prev.	m	38
+Prev.	h	21
+Single	n	218
+Single	l	327
+Single	m	106
+Single	h	67

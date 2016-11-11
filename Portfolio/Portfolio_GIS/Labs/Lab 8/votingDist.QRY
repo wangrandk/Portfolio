@@ -1,0 +1,7 @@
+Fields {*}
+Tables {AFSTEMOMR, DTU_delimiter}
+Where {AFSTEMOMR.Obj Intersects DTU_delimiter.Obj}
+Group {}
+Order {}
+Into {votingDist}
+Browse

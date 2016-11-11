@@ -1,0 +1,14 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 7
+    ID_NR Char (10) ;
+    OBJEKT_TYPE Char (30) ;
+    OBJEKT_KODE Char (4) ;
+    MID_FEJL Char (10) ;
+    UDTRÆKSDATO Char (10) ;
+    MÅLE_DATO Char (10) ;
+    PRODUCENT Char (20) ;

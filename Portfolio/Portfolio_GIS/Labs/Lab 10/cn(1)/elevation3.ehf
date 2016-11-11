@@ -1,0 +1,10 @@
+
+Version = 1.000000
+SpatialCoords Begin
+	X = "Latitude"
+	Y = "Longitude"
+	Z = "KOTE"
+SpatialCoords End
+SpecialFields Begin
+	Line = "Line"
+SpecialFields End

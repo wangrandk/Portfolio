@@ -1,0 +1,7 @@
+fertilizer	field 	value
+a	a	10.3
+a	b	-4.95
+a	c	-6
+b	a	10.3
+b	b	-4.65
+b	c	-11

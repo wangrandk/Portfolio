@@ -1,0 +1,107 @@
+!Workspace
+!Version 1250
+!Charset WindowsLatin1
+Open Table "Coordinates2" As Coordinates2 Interactive
+Open Table "C:\Program Files\MapInfo\Professional\TileServer\BingAerial.TAB" As BingAerial Interactive
+Browse * From Coordinates2
+  Position (7.25,3.375) Units "in"
+  Width 4.5 Units "in" Height 2.34167 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+set browse order by 2
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From Coordinates2,BingAerial
+  Position (6.1,3.225) Units "in"
+  Width 5.95833 Units "in" Height 2.35833 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 10, 157, "m", 0
+  Center (1409413.993,7565760.295)
+  Zoom 11.24808608 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "degree"
+Set Map Layer 0 Selectable
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With City
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Graphic
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+  contrast 50 
+  brightness 50 
+  alpha 255 
+    transparency off 
+  color 0 
+    grayscale off 
+Set CoordSys Earth Projection 1, 0
+Set Map Layer 0 Editable
+Create Point (12.617228,56.032656)
+    Symbol (68,9969285,18,"MapInfo Symbols",272,0) 
+Create Point (12.689775,56.042872)
+    Symbol (68,9969285,18,"MapInfo Symbols",272,0) 
+Create Point (12.689775,56.042872)
+    Symbol (68,9969285,18,"MapInfo Symbols",272,0) 
+Set Map Layer 0 Editable Off
+Set CoordSys Earth
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Layout Designer
+  Position (3.5,3.16667) Units "in"
+  Width 5.95833 Units "in" Height 2.34167 Units "in" 
+  Dim uniqueLayoutWin As Integer
+  uniqueLayoutWin = FrontWindow()
+  Dim restoreCoordSysString As String
+  restoreCoordSysString = "Set " + SessionInfo(1)
+  Set CoordSys Layout Units "in"
+  Set Layout Window uniqueLayoutWin Zoom 100 Center (4.53333,1.94896)
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Resolution 600
+ Papersize 1
+Map From Coordinates2
+  Position (0.141667,0.325) Units "in"
+  Width 4.06667 Units "in" Height 1.43333 Units "in" 
+  Pen (1,2,0)  Priority 1 Into Window uniqueLayoutWin
+Set Window WindowID(0) Front
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 10, 157, "m", 0
+  Center (1409413.993,7565760.295)
+  Zoom 11.24808608 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "degree"
+Set Map Layer 0 Selectable
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With City
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set CoordSys Earth Projection 1, 0
+Set Map Layer 0 Editable
+Create Point (12.617228,56.032656)
+    Symbol (68,9969285,18,"MapInfo Symbols",272,0) 
+Create Point (12.689775,56.042872)
+    Symbol (68,9969285,18,"MapInfo Symbols",272,0) 
+Create Point (12.689775,56.042872)
+    Symbol (68,9969285,18,"MapInfo Symbols",272,0) 
+Set Map Layer 0 Editable Off
+Set CoordSys Earth
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+  Set CoordSys Layout Units "in"
+Set Window uniqueLayoutWin Front
+  Run Command restoreCoordSysString
+  Undim restoreCoordSysString
+  UnDim uniqueLayoutWin

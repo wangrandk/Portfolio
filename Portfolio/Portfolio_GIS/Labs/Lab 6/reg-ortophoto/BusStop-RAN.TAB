@@ -1,0 +1,14 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 2
+    busLine Char (20) Index 1 ;
+    pointGeometry Char (20) ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "4d395039-85bd-4cd3-8ec3-3192baae4d2e"
+end_metadata

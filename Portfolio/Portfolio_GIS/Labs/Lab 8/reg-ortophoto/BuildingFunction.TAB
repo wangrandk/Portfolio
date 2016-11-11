@@ -1,0 +1,20 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 8
+    instituter Char (20) ;
+    Oticonsal Char (20) ;
+    Adminsration Char (20) ;
+    Campusservice Char (20) ;
+    Kollegier_og_gæsteboliger Char (20) ;
+    SCION_DTU Char (20) ;
+    Kantine Char (20) ;
+    Universitetsbibliotek Char (20) ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "1cced443-e86d-429b-ac69-03685eb1a771"
+end_metadata

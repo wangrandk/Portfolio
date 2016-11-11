@@ -1,0 +1,5 @@
+!table
+!version 100
+FIELDS: 2
+  Street CHAR (40) INDEX 1
+  MI_refnum INTEGER INDEX 2

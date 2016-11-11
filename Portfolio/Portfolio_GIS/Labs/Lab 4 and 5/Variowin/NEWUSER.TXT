@@ -1,0 +1,104 @@
+Hello from Lausanne,
+
+VARIOWIN 2.1 is finally available for the community. This is the
+version that will be presented in my phD by the end of the year.
+I would greatly appreciate any user's comment or reviews on the
+programs that I could include in my oral presentation.
+
+The rest of this message is a welcome message for new users of VARIOWIN 
+Version 2.1. It also describes under what conditions the package 
+is made available to the community.
+
+Thanks for your interest in VAROWIN. Your name has been added to my 
+mailing list and you will be kept informed of future releases. 
+
+Improvements from version 1.0 include :
+- Exhaustive methodological help on line developed for teaching purposes.
+- Sample map and variogram surfaces which always have a correct aspect ratio.
+- Several pairs can be selected and located on a h-scatterplot and on a 
+  variogram cloud.
+- Calculation of a variogram surface includes zero distance pairs.
+- Increased ease in modeling a 2D variogram.
+- The same 2D model can be checked against several experimental measures
+  of spatial continuity.
+- A 2D model can be saved as a grid file allowing its representation 
+  as a variogram surface.
+
+Improvements from version 2.0 include :
+- Replacement of the Standardized Inverted (Cross) Covariance by the
+  Standardized (Cross) Semivariogram. This new measure of spatial continuity
+  has properties similar to the general relative variogram.
+- Ability to handle data sets with UTM coordinates.
+- Possibility to modify the parameters of a 2D general model of spatial continuity not only via scrollbars but also by entering values with the keyboard.
+- Easier interaction with (cross) variogram clouds.
+- Ability to read data files with empty lines at the end of the file.
+- Better look of the various graphs produced by VARIO2DP and MODEL.
+
+The package is a freeware and not a public domain package. This means 
+it can be used and demonstrated as long as the about dialog box which 
+also appears when a program starts is not modified. This box displays 
+my name and address so that every user has a chance to contact me if 
+anything goes wrong. It also means that you must acknowledge using VARIOWIN
+when you publish results obtained with the help of those Programs.
+
+Please DO NOT DISTRIBUTE the package to your interested coworkers. 
+You should rather suggest them to contact me via email so that they can 
+get be added to the mailing list.
+
+Every user which sends me a mail is being added to the mailing list to 
+which I send a message every time a significant modification has been 
+made on any of the programs.
+
+Source code is not being distributed at this stage of the project. 
+Further developments are being made in the field of Exploratory 
+Variography and I would like to make them myself.
+
+The current reference for the package is the paper MS-WINDOWS 
+PROGRAMS FOR EXPLORATORY VARIOGRAPHY AND VARIOGRAM MODELING IN 2D 
+published in "Statistics of Spatial Processes: Theory and Applications
+BARI, ITALY sep. 27-30 1993" Edited by Capasso V., Girone G. & Posa D.
+pp. 165-170  
+Other articles describing the programs have been and will be submitted
+to international reviews. People on the mailing list will be advised
+whenever a new article on the subject is being published.
+
+Welcome to the group and enjoy playing with your data...
+
+                              Regards,
+
+                              Yvan Pannatier
+                              Institute of Mineralogy
+                              University of Lausanne
+                              BFSH 2
+                              1015 Lausanne
+                              SWITZERLAND
+                              Fax : ++41 (0) 21 692.43.05
+                              email : Yvan Pannatier@imp.unil.ch
+
+HOW TO RETRIEVE THE PROGRAMS VIA ANONYMOUS FTP
+**********************************************
+from any machine connected to the Internet do the following commands :
+
+1) c:\variowin>ftp ulimin1.unil.ch   OR   c:\variowin>ftp 130.223.104.13
+2) login as ftp  OR  as anonymous
+3) As a password type in your email address or anything
+4) ftp>cd /pub/geostat
+5) ftp>bin
+6) ftp>get variowin.zip
+7) ftp>get pkunzip.exe
+8) ftp>bye
+
+At this stage VARIOWIN.ZIP, and the program PKUNZIP.EXE
+have been transfered to your machine. VARIOWIN can be unzipped using the 
+command :
+
+	9) c:\variowin\pkunzip -o variowin
+
+and you can proceed with the installation according to the instructions given
+in the file INSTALL.TXT.
+
+FORESEEN CHANGE IN THE ANONYMOUS FTP SERVER
+*******************************************
+From August 1994, the archive file variowin.zip will also be available from the anonymous
+ftp server "eliot.unil.ch" in the directory /pub/geostat. This site will gradually take 
+over "ulimin1.unil.ch".

@@ -1,0 +1,10 @@
+!table
+!version 100
+FIELDS: 7
+  FromLeft SMALLINT
+  ToLeft SMALLINT
+  FromRight SMALLINT
+  ToRight SMALLINT
+  Class CHAR (3)
+  Tiger_Refnum INTEGER
+  MI_refnum INTEGER INDEX 1

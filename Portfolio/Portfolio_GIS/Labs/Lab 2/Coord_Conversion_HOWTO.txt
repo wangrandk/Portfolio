@@ -1,0 +1,60 @@
+Coordinate Conversion in MapInfo - HOWTO
+by Bill Thoen
+Jan, 2003
+
+
+You can easily transform a set of coordinates from one coordinate 
+system to another with MapInfo. Let's assume you're starting with a 
+table containing just a list of Latitude/Longitude coordinates. If 
+you're starting with a table that has point objects already, you can 
+skip the "Create Points" step.
+
+Table Structure Modification
+
+Use the Table/Maintenance/Table Structure menu option. Then modify 
+the table's structure and add two more attributes: X_Coord and 
+Y_Coord. You can name them anything you wish, but they should be of 
+type "Float" to preserve as much precision as possible. You also 
+need to make the table mappable, so mark the "Table is mappable" 
+checkbox if it's not already marked.
+
+Create Points
+
+If your table does not yet contain any point objects, these you must 
+create them from the coordinates already in your table. Choose the 
+Table/Create Points menu option. On the Create Points dialog, choose 
+appropriate values for point symbol, X and Y columns (remembering 
+that X is longitude and Y is Latitude). If your coordinates are not 
+latitude and longitude values, then also be sure to click on the 
+Projection button and set the correct coordinate system to match 
+your coordinates. Then press OK and create your points.
+
+Converting Coordinate Values
+
+Now we're ready to perform the coordinate conversion. The first step 
+is to set MapInfo's internal coordinate system to what we want for 
+our output coordinates. To do this, we will need to enter the 
+correct "Set Coordsys..." command into the MapBasic window, so open 
+the MapBasic window (use Options/Show MapBasic window.) Then open 
+the map window containing your points. Choose Map/Options and on the 
+Map Options dialog, click the Projection button and set the 
+coordinate system to the one desired. When you press OK a long 
+complicated command will appear in the MapBasic window.
+
+Now go the MapBasic window and remove all the words in that command 
+between "Set" and "Coordsys" leaving just a space between these 
+words. With the cursor anywhere on that line, press Enter. Nothing 
+will appear to have changed, but don't worry about that; MapInfo's 
+internal coordinate system has just been changed.
+
+Next, choose the Table/update column menu option. Make sure the 
+table to update is the one into which you want to write your output 
+coordinates. Set "Column to update" to your X_Coord column; "Get 
+value from table" should be the same table; and for Value, click the 
+Assist button and from the Functions drop-down pick 
+"CentroidX(obj)." Then click OK and your X values will be output. Do 
+the same for Y_Coord (using the function value CentroidY(obj) this 
+time) and you should now have a set of converted coordinates in your 
+output columns.
+
+

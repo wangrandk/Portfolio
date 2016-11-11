@@ -1,0 +1,472 @@
+!Workspace
+!Version 450
+!Charset WindowsLatin1
+Open Table "ADM\AMTGRENS" As AMTGRENS
+Open Table "ADM\KOMGRENS" As KOMGRENS
+Open Table "ADM\SOGNGREN" As SOGNGREN
+Open Table "GEO\BEBYG\BYKERNE" As BYKERNE
+Open Table "GEO\BEBYG\INDUSTRI" As INDUSTRI
+Open Table "GEO\BEBYG\HOJBEBYG" As HOJBEBYG
+Open Table "GEO\BEBYG\LAVBEBYG" As LAVBEBYG
+Open Table "GEO\BYGNING\BYGNING" As BYGNING
+Open Table "GEO\BYGNING\SILO" As SILO
+Open Table "GEO\BYGNING\DRIVHUS" As DRIVHUS
+Open Table "GEO\HYDRO\GROEFT" As GROEFT
+Open Table "GEO\HYDRO\HAVN" As HAVN
+Open Table "GEO\HYDRO\VANDLOEB" As VANDLOEB
+Open Table "GEO\HYDRO\KYST" As KYST
+Open Table "GEO\HYDRO\SOE" As SOE
+Open Table "GEO\HYDRO\VANDL_BR" As VANDL_BR
+Open Table "GEO\KULTUR\FORTID" As FORTID
+Open Table "GEO\KULTUR\KIRKEGD" As KIRKEGD
+Open Table "GEO\KULTUR\REKROMR" As REKROMR
+Open Table "GEO\KULTUR\SPORTANL" As SPORTANL
+Open Table "GEO\NATUR\DIGE" As DIGE
+Open Table "GEO\NATUR\GARTNERI" As GARTNERI
+Open Table "GEO\NATUR\HEDE" As HEDE
+Open Table "GEO\NATUR\LEVHEGN" As LEVHEGN
+Open Table "GEO\NATUR\RAASTOF" As RAASTOF
+Open Table "GEO\NATUR\SAND" As SAND
+Open Table "GEO\NATUR\SKOV" As SKOV
+Open Table "GEO\NATUR\TRAGRUP" As TRAGRUP
+Open Table "GEO\NATUR\VAADOMR" As VAADOMR
+Open Table "GEO\TEKNIK\HJSPLEDN" As HJSPLEDN
+Open Table "GEO\TEKNIK\TEKNAR" As TEKNAR
+Open Table "GEO\TEKNIK\VINDMOEL" As VINDMOEL
+Open Table "GEO\TEKNIK\LANDBANE" As LANDBANE
+Open Table "GEO\TRAFIK\STI" As STI
+Open Table "GEO\TRAFIK\MOTORVEJ" As MOTORVEJ
+Open Table "GEO\TRAFIK\MTRAFVEJ" As MTRAFVEJ
+Open Table "GEO\TRAFIK\VEJ6M" As VEJ6M
+Open Table "GEO\TRAFIK\VEJ36M" As VEJ36M
+Open Table "GEO\TRAFIK\VEJAND" As VEJAND
+Open Table "GEO\TRAFIK\JERNBANE" As JERNBANE
+Open Table "NAVNE\NAVN_GEO" As NAVN_GEO
+Open Table "NAVNE\NAVNE" As NAVNE
+Open Table "HOJDE\KURVER" As KURVER
+Open Table "GEO\TEKNIK\TELEMAST" As TELEMAST
+Open Table "NAVNE\ADM_TXT" As ADM_TXT
+Open Table "KOSMETIK\HAV" As HAV
+Open Table "KOSMETIK\_txt25" As _txt25
+Open Table "NAVNE\TEKSTER" As TEKSTER
+Open Table "KOSMETIK\UTM1KM" As UTM1KM
+Open Table "C:\MapInfo\mbprog\TEKST\KODETXT" As KODETXT
+Open Table "C:\MapInfo\mbprog\FARVE_2\Signatur" As Signatur
+Open Table "NAVNE\_txtIT" As _txtIT
+Open Table "KOSMETIK\symbol" As symbol Interactive
+Map From NAVNE,symbol,_txtIT,_txt25,UTM1KM,VINDMOEL,
+  TELEMAST,FORTID,MOTORVEJ,MOTORVEJ,MTRAFVEJ,VEJ6M,
+  VEJ36M,VEJAND,VEJAND,VEJ36M,VEJ6M,MTRAFVEJ,
+  MOTORVEJ,JERNBANE,STI,HJSPLEDN,DIGE,LEVHEGN,
+  VANDL_BR,KYST,HAVN,GROEFT,DRIVHUS,SILO,
+  BYGNING,VANDLOEB,SOE,VANDLOEB,LANDBANE,TEKNAR,
+  SKOV,VAADOMR,SAND,RAASTOF,HEDE,GARTNERI,
+  SPORTANL,REKROMR,KIRKEGD,LAVBEBYG,INDUSTRI,HOJBEBYG,
+  BYKERNE,KOMGRENS,HAV 
+  Position (0.0695187,0.0319149) Units "in"
+  Width 6.27273 Units "in" Height 4.55319 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll Off
+Set Map
+  Preserve Zoom Display Scale
+  XY Units "m" Distance Units "m" Area Units "sq m"
+Set Map
+  Layer 1
+    Display Graphic
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Graphic
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 3
+    Display Off
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 4
+    Display Graphic
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With Tekst
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 5
+    Display Off
+    Selectable Off
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With Nr
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 6
+    Display Global
+    Global   Symbol (37,0,9,"TOP10DK",0,0)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 7
+    Display Global
+    Global   Symbol (74,0,9,"TOP100DK",0,0)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 8
+    Display Global
+    Global   Symbol (38,0,8,"TOP10DK",0,0)   
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 9
+    Display Global
+    Global    Line (12,2,0)  
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 10
+    Display Global
+    Global   Symbol (35,0,12)  Line (4,2,16750179)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 11
+    Display Global
+    Global   Symbol (35,0,12)  Line (4,2,16750179)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 12
+    Display Global
+    Global   Symbol (35,0,12)  Line (3,2,16756067)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 13
+    Display Global
+    Global   Symbol (35,0,12)  Line (2,2,15466473)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 14
+    Display Global
+    Global   Symbol (35,0,12)  Line (2,2,15466473)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 15
+    Display Global
+    Global    Line (3,2,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 16
+    Display Global
+    Global    Line (3,2,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 17
+    Display Global
+    Global    Line (4,2,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 18
+    Display Global
+    Global   Symbol (35,0,12)  Line (5,2,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 19
+    Display Global
+    Global   Symbol (35,0,12)  Line (5,2,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 20
+    Display Global
+    Global   Symbol (35,0,12)  Line (17,73,3947580)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 21
+    Display Global
+    Global    Line (13,9,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 22
+    Display Off
+    Global   Symbol (35,0,12)  Line (13,14,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 23
+    Display Global
+    Global   Symbol (35,0,12)  Line (17,2,3947580)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 24
+    Display Global
+    Global   Symbol (35,0,12)  Line (22,2,8771965)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 25
+    Display Global
+    Global   Symbol (35,0,12)  Line (13,2,10213361)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 26
+    Display Global
+    Global   Symbol (35,0,12)  Line (18,2,10213361)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 27
+    Display Global
+    Global   Symbol (35,0,12)  Line (18,2,10213361)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 28
+    Display Global
+    Global   Symbol (35,0,12)  Line (12,67,13234175)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 29
+    Display Global
+    Global Pen (1,1,0)  Brush (2,3947580,16777215)  Symbol (35,0,12)  Line (1,1,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 30
+    Display Global
+    Global Pen (1,1,0)  Brush (2,3947580,16777215)  Symbol (35,0,12)  Line (1,1,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 31
+    Display Global
+    Global Pen (1,1,0)  Brush (2,3947580,16777215)  Symbol (35,0,12)  Line (1,1,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 32
+    Display Global
+    Global  Brush (2,16768140,16777215)  Symbol (35,0,12)  Line (30,2,14155775)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 33
+    Display Global
+    Global Pen (15,2,10213361)  Brush (2,14155775,16777215)  Symbol (35,0,12)  Line (1,2,6730462)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 34
+    Display Global
+    Global   Symbol (35,0,12)  Line (37,2,10213361)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 35
+    Display Global
+    Global Pen (14,2,0)  Brush (2,15466473,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 36
+    Display Global
+    Global Pen (12,1,0)  Brush (2,16769443,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 37
+    Display Global
+    Global Pen (3,2,8771965)  Brush (2,8771965,16777215)  Symbol (35,0,12)  Line (1,1,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 38
+    Display Global
+    Global Pen (1,1,0)  Brush (22,14155775)  Symbol (35,0,12)  Line (1,2,6730462)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 39
+    Display Global
+    Global Pen (1,1,0)  Brush (18,0)  Symbol (35,0,12)  Line (1,1,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 40
+    Display Global
+    Global  Brush (17,0)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 41
+    Display Global
+    Global Pen (1,1,0)  Brush (2,16766169,16777215)  Symbol (35,0,12)  Line (1,1,0)  
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 42
+    Display Global
+    Global Pen (2,2,12648377)  Brush (2,12648377,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 43
+    Display Global
+    Global Pen (2,2,12648377)  Brush (2,12648377,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 44
+    Display Global
+    Global Pen (2,2,12648377)  Brush (2,12648377,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 45
+    Display Global
+    Global Pen (2,2,12648377)  Brush (2,12648377,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 46
+    Display Global
+    Global Pen (1,1,0)  Brush (2,16769443,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 47
+    Display Global
+    Global Pen (1,1,0)  Brush (2,16769443,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 48
+    Display Global
+    Global Pen (1,1,0)  Brush (2,16769443,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 49
+    Display Global
+    Global Pen (1,1,0)  Brush (2,15843659,16777215)  Symbol (35,0,12)   
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKTTYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 50
+    Display Global
+    Global Pen (1,1,0)  Brush (2,15466473,16777215)  Symbol (35,0,12)   
+    Selectable Off
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With KOMNAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 51
+    Display Global
+    Global Pen (1,1,0)  Brush (2,14155775,16777215)  Symbol (35,0,12)   
+    Selectable Off
+    Zoom (0, 4000) Units "m" Off 
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With Str$(Object)
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On

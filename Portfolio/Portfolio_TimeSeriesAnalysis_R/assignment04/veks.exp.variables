@@ -1,0 +1,106 @@
+Heat consumption data supplied by:
+Henrik R. Hansen, Vestegnens Kraftvarmeselskab I/S,
+Roskildevej 175, 2620 Albertslund.
+
+Climate data supplied by:
+Svend Erik Jensen, Kulturteknik og Planteernæring, Institut 
+for Jordbrugsvidenskab, KVL.
+
+Information on type of day etc.:
+Jørgen Olsen, Elkraft System, Ballerup
+
+Data preparation, outlier detection, etc:
+Henrik Aalborg Nielsen, IMM, DTU
+
+External sources of funding:
+Energistyrelsen (Energiforskningsprogrammet)
+
+------------------------------------------------------------------
+row.names:	Row No.
+
+rdays:	'Running days', No. of days from the start of the data set
+	(obs 1 = 0, obs 2 = 1/24, ...)
+
+Information on time:
+ds.:	Indicates daylight savings time (MET DST), if '.ds' is omitted the
+	time is in (MET = dansk normaltid).
+
+jdate:	Julian date (No. of days since 1Jan1960)
+hh:	Time of day (0,...,23)
+dow:	Day of week (1=monday, ... , 7=sunday)
+tod:	Type of day (1=Working day, 2=Half-Holy (incl. Saturday),
+	3=Holy (incl. Sunday))
+diy:	Day in year
+wiy:	Week in year
+
+Climate at Taastrup (Ta.c,W.c,GR.c,Ta.f,W.f,GR.f):
+Ta:	Ambient air temperature (degree C)
+W:	Wind speed (m/s)
+GR:	Global radiation (W/m2), on a horizontal plane, wavelengths 305-2800 nm
+.c:	Indicates 'clean' data, i.e. original data in which "outliers" are
+	set to missing (indicated by NA).
+.f:	Indicates 'filled' data, i.e. '.c'-data in which NA's are replaced
+	by appropiate values.
+The measurements are averages over the latest 10 minutes.
+
+Measurements from VEKS:
+Ta.VEKS.o:	Air temperature (degree C), many outliers, may be influenced
+		by solar radiation.
+HC.c, HC.f:	Heat consumption (GJ/h) in the VEKS system (.c and .f as
+		for climate).
+The measurement of heat consumption are the heat consumption over the
+last hour.
+
+------------------------------------------------------------------
+First row: Variable names
+
+No. of observations: 8782
+
+Columns separated by "," (comma).
+
+First hour in data set:	01Jul1995 02:00 (MET DST)
+Last hour in data set:	30Jun1996 23:00 (MET DST)
+
+Summary for verification:
+      rdays             Ta.c              W.c              GR.c       
+ Min.   :  0.00   Min.   :-14.600   Min.   : 0.100   Min.   :  -6.0  
+ 1st Qu.: 91.43   1st Qu.:  0.200   1st Qu.: 1.600   1st Qu.:  -1.0  
+ Median :182.90   Median :  7.800   Median : 2.700   Median :   4.0  
+ Mean   :182.90   Mean   :  7.452   Mean   : 2.893   Mean   : 113.7  
+ 3rd Qu.:274.40   3rd Qu.: 14.000   3rd Qu.: 4.000   3rd Qu.: 148.0  
+ Max.   :365.90   Max.   : 28.600   Max.   :11.000   Max.   : 874.0  
+                  NA's   : 20.000   NA's   :37.000   NA's   :  18.0  
+       HC.c             Ta.f              W.f              GR.f       
+ Min.   : 197.0   Min.   :-14.600   Min.   : 0.100   Min.   :  -6.0  
+ 1st Qu.: 431.8   1st Qu.:  0.200   1st Qu.: 1.600   1st Qu.:  -1.0  
+ Median : 834.5   Median :  7.700   Median : 2.700   Median :   4.0  
+ Mean   : 968.8   Mean   :  7.432   Mean   : 2.894   Mean   : 113.5  
+ 3rd Qu.:1491.0   3rd Qu.: 14.000   3rd Qu.: 4.000   3rd Qu.: 147.0  
+ Max.   :2449.0   Max.   : 28.600   Max.   :11.000   Max.   : 874.0  
+ NA's   : 410.0                                                      
+       HC.f          Ta.VEKS.o          ds.jdate         ds.hh      
+ Min.   : 197.0   Min.   :-34.900   Min.   :12970   Min.   : 0.00  
+ 1st Qu.: 432.8   1st Qu.:  0.000   1st Qu.:13060   1st Qu.: 6.00  
+ Median : 844.7   Median :  9.000   Median :13150   Median :12.00  
+ Mean   : 976.4   Mean   :  8.261   Mean   :13150   Mean   :11.50  
+ 3rd Qu.:1498.0   3rd Qu.: 16.300   3rd Qu.:13240   3rd Qu.:17.75  
+ Max.   :2449.0   Max.   : 35.000   Max.   :13330   Max.   :23.00  
+                  NA's   : 56.000                                  
+      ds.dow          ds.tod          ds.diy        ds.wiy         jdate      
+ Min.   :1.000   Min.   :1.000   Min.   :  1   Min.   : 1.0   Min.   :12970  
+ 1st Qu.:2.000   1st Qu.:1.000   1st Qu.: 92   1st Qu.:14.0   1st Qu.:13060  
+ Median :4.000   Median :1.000   Median :183   Median :26.0   Median :13150  
+ Mean   :4.013   Mean   :1.489   Mean   :183   Mean   :26.5   Mean   :13150  
+ 3rd Qu.:6.000   3rd Qu.:2.000   3rd Qu.:274   3rd Qu.:39.0   3rd Qu.:13240  
+ Max.   :7.000   Max.   :3.000   Max.   :365   Max.   :52.0   Max.   :13330  
+                                                                             
+        hh      
+ Min.   : 0.0  
+ 1st Qu.: 6.0  
+ Median :11.5  
+ Mean   :11.5  
+ 3rd Qu.:17.0  
+ Max.   :23.0  
+               
+
+

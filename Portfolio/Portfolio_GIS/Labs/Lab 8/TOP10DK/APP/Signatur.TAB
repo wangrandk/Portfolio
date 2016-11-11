@@ -1,0 +1,10 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "Neutral"
+  Fields 3
+    Type Char (20) ;
+    Zoom_Max Float ;
+    Zoom_Min Float ;

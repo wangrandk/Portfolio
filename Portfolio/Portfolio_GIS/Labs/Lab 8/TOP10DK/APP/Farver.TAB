@@ -1,0 +1,19 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 12
+    TABELNAVN Char (8) Index 1 ;
+    NAVN Char (12) Index 2 ;
+    PENSELMØN Smallint ;
+    PENSEL_F_F Integer ;
+    PENSEL_B_F Integer ;
+    PEN_BRE Smallint ;
+    PEN_MØN Smallint ;
+    PEN_FAR Integer ;
+    PUNKT_STIL Smallint ;
+    PUNKT_FARVE Integer ;
+    PUNKT_ST Smallint ;
+    VIS Logical ;

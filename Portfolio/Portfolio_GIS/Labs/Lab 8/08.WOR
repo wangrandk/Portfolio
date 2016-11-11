@@ -1,0 +1,227 @@
+!Workspace
+!Version  950
+!Charset WindowsLatin1
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\AFSTEMOMR" As AFSTEMOMR Interactive
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\KOMMUNE" As KOMMUNE Interactive
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\OPSTILKR" As OPSTILKR Interactive
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\POLITIKR" As POLITIKR Interactive
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\POSTNUMMER" As POSTNUMMER Interactive
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\REGION" As REGION Interactive
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\RETSKR" As RETSKR Interactive
+Open Table "DAGI10\DK_MAPINFO_UTM32-EUREF89\DAGI10\SOGN" As SOGN Interactive
+Open Table "DTU_delimiter\DTU_delimiter" As DTU_delimiter Interactive
+Open Table "reg-ortophoto\BuildingFunction" As BuildingFunction Interactive
+Open Table "reg-ortophoto\BusStop" As BusStop Interactive
+Open Table "reg-ortophoto\ParkingLot" As ParkingLot Interactive
+Open Table "reg-ortophoto\Road" As Road Interactive
+Open Table "reg-ortophoto\Building" As Building Interactive
+Open Table "TOP10DK\GEO\BYGNING\BYGNING" As BYGNING Interactive
+Open Table "TOP10DK\GEO\BYGNING\DRIVHUS" As DRIVHUS Interactive
+Open Table "TOP10DK\GEO\BYGNING\SILO" As SILO Interactive
+Select *  from AFSTEMOMR , DTU_delimiter  where AFSTEMOMR . Obj intersects DTU_delimiter . Obj  into votingDist noselect  
+Select *  from Building , DTU_delimiter  where Building . obj intersects DTU_delimiter . Obj  into buildingintersect noselect  
+Map From buildingintersect,DRIVHUS,Building,SILO,BYGNING
+  ,Building,DTU_delimiter,BusStop,votingDist,AFSTEMOMR
+  Position (2.16667,2) Units "in"
+  Width 5.76667 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (720953.2751,6188101.837)
+  Zoom 1.386771224 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Off
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With buildingNr
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Off
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 3
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With buildingNr
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 4
+    Display Off
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 5
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 6
+    Display Off
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With buildingNr
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 7
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With date
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 8
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Right Font ("Arial",0,9,0) Pen (1,2,0) 
+      With busLine
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 9
+    Display Global
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With UUID
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 10
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With UUID
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set Map Layer 3 Editable
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Browse * From votingDist
+  Position (2.95833,3.20833) Units "in"
+  Width 5.76667 Units "in" Height 3.33333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Browse * From Building
+  Position (3.20833,3.275) Units "in"
+  Width 5.76667 Units "in" Height 3.33333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Browse * From buildingintersect
+  Position (4.25,1.95833) Units "in"
+  Width 5.76667 Units "in" Height 3.33333 Units "in" 
+set window FrontWindow() Font ("Segoe UI",0,9,0)
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From BYGNING,buildingintersect
+  Position (4.45833,2.225) Units "in"
+  Width 5.88333 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 1, 28
+  Center (12.52802148,55.78783448)
+  Zoom 1.92417623 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "degree"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With buildingNr
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From SILO,DRIVHUS
+  Position (1.8,2.05833) Units "in"
+  Width 5.875 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (718478.7436,6195654.54)
+  Zoom 0.6115980963 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From BYGNING
+  Position (2.00833,2.33333) Units "in"
+  Width 5.875 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (718936.0259,6192480.469)
+  Zoom 0.1647888072 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From Building
+  Position (2.21667,2.60833) Units "in"
+  Width 5.875 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 1, 0
+  Center (12.526894,55.7899555)
+  Zoom 0.3218251519 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "degree"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With buildingNr
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1

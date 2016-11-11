@@ -1,0 +1,18 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  File "ddoby2003.ecw"
+  Type "RASTER"
+  (360,90) (-7197446,61888412) Label "Pt 1",
+  (360,90) (-7197446,61888412) Label "Pt 2",
+  (360,90) (-7197446,61888412) Label "Pt 3",
+  (360,90) (-7197446,61888412) Label "Pt 4"
+  CoordSys Earth Projection 1, 0
+  Units "degree"
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "c4fc8f45-532e-4d5f-a7b0-1c77ac3ede37"
+end_metadata

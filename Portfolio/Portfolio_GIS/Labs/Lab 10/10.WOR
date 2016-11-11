@@ -1,0 +1,647 @@
+!Workspace
+!Version  950
+!Charset WindowsLatin1
+Open Table "cn(1)\elevation3" As elevation3 Interactive
+Open Table "cn(1)\DDOby2003.TAB" As DDOby2003 Interactive
+Open Table "cn(1)\elevation3_KOTE04.TAB" As elevation3_KOTE04 Interactive
+Open Table "TOP10DK\GEO\BYGNING\BYGNING" As BYGNING Interactive
+Open Table "TOP10DK\GEO\BYGNING\DRIVHUS" As DRIVHUS Interactive
+Open Table "TOP10DK\GEO\BYGNING\SILO" As SILO Interactive
+Open Table "DTU_delimiter\DTU_delimiter" As DTU_delimiter Interactive
+Open Table "TOP10DK\GEO\TRAFIK\MOTORVEJ" As MOTORVEJ Interactive
+Open Table "TOP10DK\GEO\TRAFIK\STI" As STI Interactive
+Open Table "TOP10DK\GEO\TRAFIK\VEJ6M" As VEJ6M Interactive
+Open Table "TOP10DK\GEO\TRAFIK\VEJ36M" As VEJ36M Interactive
+Open Table "TOP10DK\GEO\TRAFIK\VEJAND" As VEJAND Interactive
+Open Table "cn(1)\elevation3_KOTE04_Legend.TAB" As elevation3_KOTE04_Legend Interactive
+Open Table "cn(1)\elevation3_KOTE04_Legend_Labels" As elevation3_KOTE04_Legend_Label Interactive
+Map From VEJAND,VEJ36M,VEJ6M,STI,MOTORVEJ
+  ,DTU_delimiter,DDOby2003,elevation3,BYGNING,SILO,elevation3_KOTE04
+  Position (0.691667,0.983333) Units "in"
+  Width 6.49167 Units "in" Height 2.15 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (720982.2366,6187981.917)
+  Zoom 1696.065945 Units "m"
+  Preserve Zoom Display Position
+  Distance Units "m" Area Units "sq m" XY Units "m"
+Set Map Layer 0 Selectable
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 2
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 3
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 4
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 5
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 6
+    Display Global
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (6,2,53248) Font ("Arial",0,9,0)
+    Zoom (0, 160900000) Units "m" Off 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With date
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 7
+    Display Global
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+    Zoom (2.575, 997.8) Units "m" 
+  contrast 50 
+  brightness 50 
+  alpha 61 
+    transparency off 
+  color 0 
+    grayscale off 
+  Layer 8
+    Display Global
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Zoom (0, 160900000) Units "m" 
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With KOTE
+      Parallel On Auto Off Overlap Off Duplicates On PartialSegments On Offset 2
+      Visibility On LabelAlpha 183
+  Layer 9
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 10
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 11
+    Display Value
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Zoom (125.5, 49890) Units "m" Off 
+    inflect 255 at 
+      RGB(0, 0, 0) : 26.0639 
+      RGB(1, 1, 1) : 26.1483 
+      RGB(2, 2, 2) : 26.2327 
+      RGB(3, 3, 4) : 26.3171 
+      RGB(4, 4, 5) : 26.4015 
+      RGB(5, 5, 7) : 26.4859 
+      RGB(6, 6, 8) : 26.5702 
+      RGB(7, 7, 9) : 26.6546 
+      RGB(9, 9, 11) : 26.739 
+      RGB(10, 10, 12) : 26.8234 
+      RGB(11, 11, 14) : 26.9078 
+      RGB(12, 12, 15) : 26.9922 
+      RGB(13, 13, 17) : 27.0766 
+      RGB(14, 14, 18) : 27.161 
+      RGB(15, 15, 19) : 27.2454 
+      RGB(17, 17, 21) : 27.3298 
+      RGB(18, 18, 22) : 27.4142 
+      RGB(19, 19, 24) : 27.4986 
+      RGB(20, 20, 25) : 27.583 
+      RGB(21, 21, 27) : 27.6674 
+      RGB(22, 22, 28) : 27.7518 
+      RGB(23, 23, 29) : 27.8362 
+      RGB(25, 25, 31) : 27.9206 
+      RGB(26, 26, 32) : 28.0049 
+      RGB(27, 27, 34) : 28.0893 
+      RGB(28, 28, 35) : 28.1737 
+      RGB(29, 29, 36) : 28.2581 
+      RGB(30, 30, 38) : 28.3425 
+      RGB(31, 31, 39) : 28.4269 
+      RGB(33, 33, 41) : 28.5113 
+      RGB(34, 34, 42) : 28.5957 
+      RGB(35, 35, 44) : 28.6801 
+      RGB(36, 36, 45) : 28.7645 
+      RGB(37, 37, 46) : 28.8489 
+      RGB(38, 38, 48) : 28.9333 
+      RGB(39, 39, 49) : 29.0177 
+      RGB(40, 40, 51) : 29.1021 
+      RGB(42, 42, 52) : 29.1865 
+      RGB(43, 43, 54) : 29.2709 
+      RGB(44, 44, 55) : 29.3553 
+      RGB(45, 45, 56) : 29.4396 
+      RGB(46, 46, 58) : 29.524 
+      RGB(47, 47, 59) : 29.6084 
+      RGB(48, 48, 61) : 29.6928 
+      RGB(50, 50, 62) : 29.7772 
+      RGB(51, 51, 64) : 29.8616 
+      RGB(52, 52, 65) : 29.946 
+      RGB(53, 53, 66) : 30.0304 
+      RGB(54, 54, 68) : 30.1148 
+      RGB(55, 55, 69) : 30.1992 
+      RGB(56, 56, 71) : 30.2836 
+      RGB(58, 58, 72) : 30.368 
+      RGB(59, 59, 73) : 30.4524 
+      RGB(60, 60, 75) : 30.5368 
+      RGB(61, 61, 76) : 30.6212 
+      RGB(62, 62, 78) : 30.7056 
+      RGB(63, 63, 79) : 30.79 
+      RGB(64, 64, 81) : 30.8743 
+      RGB(66, 66, 82) : 30.9587 
+      RGB(67, 67, 83) : 31.0431 
+      RGB(68, 68, 85) : 31.1275 
+      RGB(69, 69, 86) : 31.2119 
+      RGB(70, 70, 88) : 31.2963 
+      RGB(71, 71, 89) : 31.3807 
+      RGB(72, 72, 91) : 31.4651 
+      RGB(73, 73, 92) : 31.5495 
+      RGB(75, 75, 93) : 31.6339 
+      RGB(76, 76, 95) : 31.7183 
+      RGB(77, 77, 96) : 31.8027 
+      RGB(78, 78, 98) : 31.8871 
+      RGB(79, 79, 99) : 31.9715 
+      RGB(80, 80, 101) : 32.0559 
+      RGB(81, 81, 102) : 32.1403 
+      RGB(83, 83, 103) : 32.2247 
+      RGB(84, 84, 105) : 32.309 
+      RGB(85, 85, 106) : 32.3934 
+      RGB(86, 86, 108) : 32.4778 
+      RGB(87, 87, 109) : 32.5622 
+      RGB(88, 88, 110) : 32.6466 
+      RGB(89, 89, 112) : 32.731 
+      RGB(91, 91, 113) : 32.8154 
+      RGB(92, 92, 115) : 32.8998 
+      RGB(93, 93, 116) : 32.9842 
+      RGB(94, 94, 118) : 33.0686 
+      RGB(95, 95, 119) : 33.153 
+      RGB(96, 96, 120) : 33.2374 
+      RGB(97, 97, 122) : 33.3218 
+      RGB(99, 99, 123) : 33.4062 
+      RGB(100, 100, 125) : 33.4906 
+      RGB(101, 101, 126) : 33.575 
+      RGB(102, 102, 128) : 33.6594 
+      RGB(103, 103, 129) : 33.7438 
+      RGB(104, 104, 130) : 33.8281 
+      RGB(105, 105, 132) : 33.9125 
+      RGB(107, 107, 133) : 33.9969 
+      RGB(108, 108, 135) : 34.0813 
+      RGB(109, 109, 136) : 34.1657 
+      RGB(110, 110, 138) : 34.2501 
+      RGB(111, 111, 139) : 34.3345 
+      RGB(112, 112, 140) : 34.4189 
+      RGB(113, 113, 142) : 34.5033 
+      RGB(114, 114, 143) : 34.5877 
+      RGB(116, 116, 145) : 34.6721 
+      RGB(117, 117, 146) : 34.7565 
+      RGB(118, 118, 147) : 34.8409 
+      RGB(119, 119, 149) : 34.9253 
+      RGB(120, 120, 150) : 35.0097 
+      RGB(121, 121, 152) : 35.0941 
+      RGB(122, 122, 153) : 35.1785 
+      RGB(124, 124, 155) : 35.2628 
+      RGB(125, 125, 156) : 35.3472 
+      RGB(126, 126, 157) : 35.4316 
+      RGB(127, 127, 159) : 35.516 
+      RGB(128, 128, 160) : 35.6004 
+      RGB(129, 129, 162) : 35.6848 
+      RGB(130, 130, 163) : 35.7692 
+      RGB(132, 132, 165) : 35.8536 
+      RGB(133, 133, 166) : 35.938 
+      RGB(134, 134, 167) : 36.0224 
+      RGB(135, 135, 169) : 36.1068 
+      RGB(136, 136, 170) : 36.1912 
+      RGB(137, 137, 172) : 36.2756 
+      RGB(138, 138, 173) : 36.36 
+      RGB(140, 140, 175) : 36.4444 
+      RGB(141, 141, 176) : 36.5288 
+      RGB(142, 142, 177) : 36.6132 
+      RGB(143, 143, 179) : 36.6975 
+      RGB(145, 145, 182) : 36.7819 
+      RGB(146, 146, 183) : 36.8663 
+      RGB(147, 147, 184) : 36.9507 
+      RGB(149, 149, 186) : 37.0351 
+      RGB(150, 150, 187) : 37.1195 
+      RGB(151, 151, 189) : 37.2039 
+      RGB(152, 152, 190) : 37.2883 
+      RGB(153, 153, 192) : 37.3727 
+      RGB(154, 154, 193) : 37.4571 
+      RGB(155, 155, 194) : 37.5415 
+      RGB(157, 157, 196) : 37.6259 
+      RGB(158, 158, 197) : 37.7103 
+      RGB(159, 159, 199) : 37.7947 
+      RGB(160, 160, 200) : 37.8791 
+      RGB(161, 161, 202) : 37.9635 
+      RGB(162, 162, 203) : 38.0479 
+      RGB(163, 163, 204) : 38.1322 
+      RGB(165, 165, 206) : 38.2166 
+      RGB(166, 166, 207) : 38.301 
+      RGB(167, 167, 209) : 38.3854 
+      RGB(168, 168, 210) : 38.4698 
+      RGB(169, 169, 212) : 38.5542 
+      RGB(170, 170, 213) : 38.6386 
+      RGB(171, 171, 214) : 38.723 
+      RGB(173, 173, 216) : 38.8074 
+      RGB(174, 174, 217) : 38.8918 
+      RGB(175, 175, 219) : 38.9762 
+      RGB(176, 176, 220) : 39.0606 
+      RGB(177, 177, 221) : 39.145 
+      RGB(178, 178, 223) : 39.2294 
+      RGB(179, 179, 224) : 39.3138 
+      RGB(181, 181, 226) : 39.3982 
+      RGB(182, 182, 227) : 39.4826 
+      RGB(183, 183, 229) : 39.5669 
+      RGB(184, 184, 230) : 39.6513 
+      RGB(185, 185, 231) : 39.7357 
+      RGB(186, 186, 233) : 39.8201 
+      RGB(187, 187, 234) : 39.9045 
+      RGB(188, 188, 236) : 39.9889 
+      RGB(190, 190, 237) : 40.0733 
+      RGB(191, 191, 239) : 40.1577 
+      RGB(192, 192, 240) : 40.2421 
+      RGB(193, 193, 241) : 40.3265 
+      RGB(194, 194, 243) : 40.4109 
+      RGB(195, 195, 244) : 40.4953 
+      RGB(196, 196, 246) : 40.5797 
+      RGB(198, 198, 247) : 40.6641 
+      RGB(199, 199, 249) : 40.7485 
+      RGB(200, 200, 250) : 40.8329 
+      RGB(201, 201, 251) : 40.9173 
+      RGB(202, 202, 253) : 41.0016 
+      RGB(203, 203, 254) : 41.086 
+      RGB(202, 202, 252) : 41.1704 
+      RGB(201, 201, 250) : 41.2548 
+      RGB(200, 200, 247) : 41.3392 
+      RGB(198, 198, 244) : 41.4236 
+      RGB(197, 197, 242) : 41.508 
+      RGB(196, 196, 239) : 41.5924 
+      RGB(194, 194, 236) : 41.6768 
+      RGB(193, 193, 234) : 41.7612 
+      RGB(192, 192, 231) : 41.8456 
+      RGB(190, 190, 228) : 41.93 
+      RGB(189, 189, 226) : 42.0144 
+      RGB(188, 188, 223) : 42.0988 
+      RGB(187, 187, 221) : 42.1832 
+      RGB(185, 185, 218) : 42.2676 
+      RGB(184, 184, 215) : 42.352 
+      RGB(183, 183, 213) : 42.4363 
+      RGB(181, 181, 210) : 42.5207 
+      RGB(180, 180, 207) : 42.6051 
+      RGB(179, 179, 205) : 42.6895 
+      RGB(177, 177, 202) : 42.7739 
+      RGB(176, 176, 199) : 42.8583 
+      RGB(175, 175, 197) : 42.9427 
+      RGB(173, 173, 194) : 43.0271 
+      RGB(172, 172, 191) : 43.1115 
+      RGB(171, 171, 189) : 43.1959 
+      RGB(169, 169, 186) : 43.2803 
+      RGB(168, 168, 183) : 43.3647 
+      RGB(167, 167, 181) : 43.4491 
+      RGB(165, 165, 178) : 43.5335 
+      RGB(164, 164, 175) : 43.6179 
+      RGB(163, 163, 173) : 43.7023 
+      RGB(161, 161, 170) : 43.7867 
+      RGB(160, 160, 167) : 43.8711 
+      RGB(159, 159, 165) : 43.9554 
+      RGB(157, 157, 162) : 44.0398 
+      RGB(156, 156, 159) : 44.1242 
+      RGB(155, 155, 157) : 44.2086 
+      RGB(153, 153, 154) : 44.293 
+      RGB(153, 153, 153) : 44.3774 
+      RGB(156, 156, 156) : 44.4618 
+      RGB(158, 158, 158) : 44.5462 
+      RGB(161, 161, 161) : 44.6306 
+      RGB(163, 163, 163) : 44.715 
+      RGB(166, 166, 166) : 44.7994 
+      RGB(168, 168, 168) : 44.8838 
+      RGB(171, 171, 171) : 44.9682 
+      RGB(173, 173, 173) : 45.0526 
+      RGB(176, 176, 176) : 45.137 
+      RGB(178, 178, 178) : 45.2214 
+      RGB(181, 181, 181) : 45.3058 
+      RGB(183, 183, 183) : 45.3901 
+      RGB(186, 186, 186) : 45.4745 
+      RGB(188, 188, 188) : 45.5589 
+      RGB(191, 191, 191) : 45.6433 
+      RGB(193, 193, 193) : 45.7277 
+      RGB(196, 196, 196) : 45.8121 
+      RGB(198, 198, 198) : 45.8965 
+      RGB(201, 201, 201) : 45.9809 
+      RGB(203, 203, 203) : 46.0653 
+      RGB(205, 205, 205) : 46.1497 
+      RGB(206, 206, 206) : 46.2341 
+      RGB(208, 208, 208) : 46.3185 
+      RGB(209, 209, 209) : 46.4029 
+      RGB(211, 211, 211) : 46.4873 
+      RGB(212, 212, 212) : 46.5717 
+      RGB(214, 214, 214) : 46.6561 
+      RGB(215, 215, 215) : 46.7405 
+      RGB(216, 216, 216) : 46.8248 
+      RGB(218, 218, 218) : 46.9092 
+      RGB(219, 219, 219) : 46.9936 
+      RGB(221, 221, 221) : 47.078 
+      RGB(222, 222, 222) : 47.1624 
+      RGB(224, 224, 224) : 47.2468 
+      RGB(225, 225, 225) : 47.3312 
+      RGB(227, 227, 227) : 47.4156 
+      RGB(228, 228, 228) : 47.5 
+      round 0 # use 148 # 
+    contrast 50 
+    brightness 50 
+    alpha 147 
+    grayscale off 
+
+    relief off 
+Set Map Layer 8 Editable
+set legend 
+  layer 11 
+    display on 
+    shades on 
+    symbols off 
+    lines off 
+    count off 
+    title auto Font ("Arial",0,9,0)
+    subtitle auto Font ("Arial",0,8,0)
+    ascending off 
+    ranges Font ("Arial",0,8,0)
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on ,
+      auto display on  
+Set Window FrontWindow() Printer
+ Name "Samsung ML-1865W Series" Orientation Portrait Copies 1
+ Papersize 1
+Dim WorkspaceMaximizedWindow As Integer
+WorkspaceMaximizedWindow = Frontwindow()
+Set Window WorkspaceMaximizedWindow Max
+Undim WorkspaceMaximizedWindow

@@ -1,0 +1,7 @@
+Fields {*}
+Tables {Building, votingDist}
+Where {Building.obj intersects votingDist.obj}
+Group {}
+Order {}
+Into {buildingIN}
+Browse

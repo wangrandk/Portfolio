@@ -1,0 +1,32 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 11
+    ID_NR Integer Index 1 ;
+    OBJEKT_TYPE Char (30) ;
+    OBJEKT_KODE Smallint Index 4 ;
+    SNSOR_NR Char (15) ;
+    NAVN Char (30) Index 3 ;
+    REF_ID Char (10) Index 2 ;
+    MID_FEJL Char (10) ;
+    UDTRÆKSDATO Char (10) ;
+    MÅLE_DATO Char (10) ;
+    PRODUCENT Char (20) ;
+    STAMOPL Logical ;
+ReadOnly
+begin_metadata
+"\Produkt:" = "TOP10DK Version 1.2"
+"\IsReadOnly" = "FALSE"
+"\Område:" = "Søllerød Kommune"
+"\Projektion:" = "UTM Zone 32, ED50"
+"\Udtrukket af base den:" = "11-04-2000"
+"\Leveret den:" = "17-04-2000"
+"\Leveret til:" = "DTU"
+"\Copyright:" = "Kort & Matrikelstyrelsen"
+"\Adresse:" = "Rentemestervej 8"
+"\Postdistrikt:" = "2400 København NV"
+"\Telefon:" = "35 87 50 50"
+end_metadata

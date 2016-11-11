@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.1" />
+		<meta name="keywords" content="Phylogenetic Clustering exercise (chemometrics)" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/teaching/opensearch_desc.php" title="teaching (en)" />
+		<link rel="alternate" type="application/rss+xml" title="teaching RSS Feed" href="/teaching/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="teaching Atom Feed" href="/teaching/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>Phylogenetic Clustering exercise (chemometrics) - teaching</title>
+		<link rel="stylesheet" href="/teaching/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/teaching/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="/teaching/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/teaching/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/teaching/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/teaching/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/teaching/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/teaching/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/teaching/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="/teaching/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/teaching/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/teaching/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/teaching/skins";
+		var wgArticlePath = "/teaching/index.php/$1";
+		var wgScriptPath = "/teaching";
+		var wgScript = "/teaching/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://wiki.bio.dtu.dk";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Phylogenetic_Clustering_exercise_(chemometrics)";
+		var wgTitle = "Phylogenetic Clustering exercise (chemometrics)";
+		var wgAction = "view";
+		var wgArticleId = "1464";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 15813;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="/teaching/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/teaching/skins/common/ajax.js?207"></script>
+		<script type="text/javascript" src="/teaching/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Phylogenetic_Clustering_exercise_chemometrics skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Phylogenetic Clustering exercise (chemometrics)</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From teaching</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Analysis_of_the_Simple_Data_Set"><span class="tocnumber">1</span> <span class="toctext">Analysis of the Simple Data Set</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Step_1:_Install_and_load_required_packages"><span class="tocnumber">1.1</span> <span class="toctext">Step 1: Install and load required packages</span></a></li>
+<li class="toclevel-2"><a href="#Step_2:_Download_sequence_data"><span class="tocnumber">1.2</span> <span class="toctext">Step 2: Download sequence data</span></a></li>
+<li class="toclevel-2"><a href="#Step_3:_Load_sequence_alignment_into_R"><span class="tocnumber">1.3</span> <span class="toctext">Step 3: Load sequence alignment into R</span></a></li>
+<li class="toclevel-2"><a href="#Step_4:_Compute_distance_matrix_from_alignment"><span class="tocnumber">1.4</span> <span class="toctext">Step 4: Compute distance matrix from alignment</span></a></li>
+<li class="toclevel-2"><a href="#Step_5:_Compute_phylogenetic_tree_from_distance_matrix"><span class="tocnumber">1.5</span> <span class="toctext">Step 5: Compute phylogenetic tree from distance matrix</span></a></li>
+<li class="toclevel-2"><a href="#Step_6:_Compare_branch_lengths_to_manual_result"><span class="tocnumber">1.6</span> <span class="toctext">Step 6: Compare branch lengths to manual result</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#The_Phylogeny_of_HIV"><span class="tocnumber">2</span> <span class="toctext">The Phylogeny of HIV</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Step_1:_Align_protein_sequences"><span class="tocnumber">2.1</span> <span class="toctext">Step 1: Align protein sequences</span></a></li>
+<li class="toclevel-2"><a href="#Step_2:_Read_alignment_into_R"><span class="tocnumber">2.2</span> <span class="toctext">Step 2: Read alignment into R</span></a></li>
+<li class="toclevel-2"><a href="#Step_3:_Compute_distance_matrix_from_alignment"><span class="tocnumber">2.3</span> <span class="toctext">Step 3: Compute distance matrix from alignment</span></a></li>
+<li class="toclevel-2"><a href="#Step_4:_Compute_tree_from_distance_matrix"><span class="tocnumber">2.4</span> <span class="toctext">Step 4: Compute tree from distance matrix</span></a></li>
+<li class="toclevel-2"><a href="#Step_5:_Root_tree_using_outgroup"><span class="tocnumber">2.5</span> <span class="toctext">Step 5: Root tree using outgroup</span></a></li>
+<li class="toclevel-2"><a href="#Step_6:_Add_labels_to_two_major_clusters"><span class="tocnumber">2.6</span> <span class="toctext">Step 6: Add labels to two major clusters</span></a></li>
+<li class="toclevel-2"><a href="#Step_7:_Consider_evolutionary_origin_of_HIV-1_and_HIV-2"><span class="tocnumber">2.7</span> <span class="toctext">Step 7: Consider evolutionary origin of HIV-1 and HIV-2</span></a></li>
+<li class="toclevel-2"><a href="#Step_8:_Optional:_Save_tree_and_inspect_tree_in_external_viewer"><span class="tocnumber">2.8</span> <span class="toctext">Step 8: Optional: Save tree and inspect tree in external viewer</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Optional_extra_exercise:_build_your_own_tree"><span class="tocnumber">3</span> <span class="toctext">Optional extra exercise: build your own tree</span></a></li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Analysis_of_the_Simple_Data_Set" id="Analysis_of_the_Simple_Data_Set"></a><h2> <span class="mw-headline"> Analysis of the Simple Data Set </span></h2>
+<p>In this section, we will redo the analysis we performed in the handout analysis, to see that the software gets the same result as you did. 
+</p>
+<a name="Step_1:_Install_and_load_required_packages" id="Step_1:_Install_and_load_required_packages"></a><h3> <span class="mw-headline">Step 1: Install and load required packages</span></h3>
+<p>First: Start R (in terminal window, GUI, or RStudio)
+</p><p>Then, install and load the packages <i>ape</i> and <i>phangorn</i>, which contain functions for phylogenetic analysis:
+</p>
+<pre>install.packages("ape")
+install.packages("phangorn")
+library(ape)
+library(phangorn)
+</pre>
+<a name="Step_2:_Download_sequence_data" id="Step_2:_Download_sequence_data"></a><h3> <span class="mw-headline">Step 2: Download sequence data</span></h3>
+<p>The file linked below contains the same alignment you analysed manually in the handout exercise. Save the content of file to a file named "simple.txt" in the R working directory (for instance copy and paste from the webpage below to a text editor, and save in the proper location):
+</p><p><a href="/teaching/images/1/18/Simple.fasta" class="internal" title="Simple.fasta">simple.txt</a>
+</p>
+<a name="Step_3:_Load_sequence_alignment_into_R" id="Step_3:_Load_sequence_alignment_into_R"></a><h3> <span class="mw-headline">Step 3: Load sequence alignment into R </span></h3>
+<p>Read the alignment into a variable named "simpledat":
+</p>
+<pre>simpledat = read.phyDat("simple.txt", type="DNA", format="fasta")
+</pre>
+<a name="Step_4:_Compute_distance_matrix_from_alignment" id="Step_4:_Compute_distance_matrix_from_alignment"></a><h3> <span class="mw-headline">Step 4: Compute distance matrix from alignment</span></h3>
+<p>The function <i>dist.hamming()</i> computes a distance matrix from an alignment. 
+</p>
+<pre>dm = dist.hamming(simpledat, ratio=FALSE)
+print(dm)
+</pre>
+<p>The option <i>ratio=FALSE</i> means that distances should be counted as the absolute number of changes instead of as the fraction of changed sites (i.e., the number of changes divided by length of alignment). Is this the same matrix you got manually?
+</p>
+<a name="Step_5:_Compute_phylogenetic_tree_from_distance_matrix" id="Step_5:_Compute_phylogenetic_tree_from_distance_matrix"></a><h3> <span class="mw-headline">Step 5: Compute phylogenetic tree from distance matrix</span></h3>
+<p>Use neighbour joining to compute a tree from the distance matrix, and plot the tree in unrooted form. Is this the same tree you got in the handout exercise?
+</p>
+<pre>simpletree = NJ(dm)
+plot(simpletree, type="unrooted", rotate.tree=90, lab4ut="axial")
+</pre>
+<p>The option <i>lab4ut="axial"</i> plots tip names in the direction of the branches
+</p>
+<a name="Step_6:_Compare_branch_lengths_to_manual_result" id="Step_6:_Compare_branch_lengths_to_manual_result"></a><h3> <span class="mw-headline">Step 6: Compare branch lengths to manual result</span></h3>
+<p>Branch lengths are stored as an attribute of the tree. Specifically they are available as a vector of lengths for the consecutively numbered branches in the attribute <i>treename</i>$edge.length:
+</p>
+<pre>print(simpletree$edge.length)
+</pre>
+<p>By converting this numeric vector to a character vector, and using the function <i>edgelabels()</i> we can plot these branch lengths on the tree.
+</p>
+<pre>brlens = as.character(simpletree$edge.length)
+edgelabels(brlens, bg="white", frame="circle")
+</pre>
+<p>Are these the same values that you got in the manual exercise?
+</p>
+<a name="The_Phylogeny_of_HIV" id="The_Phylogeny_of_HIV"></a><h2> <span class="mw-headline"> The Phylogeny of HIV </span></h2>
+<p>In this exercise you will analyze the evolutionary relationship between HIV-related viruses from man and monkeys:
+</p><p>Acquired Immune Deficiency Syndrome (AIDS) is caused by two divergent viruses, Human Immunodeficiency Virus one (HIV-1) and Human Immunodeficiency Virus two (HIV-2). HIV-1 is responsible for the global pandemic, while HIV-2 has, until recently, been restricted to West Africa and appears to be less virulent in its effects. Viruses related to HIV have been found in many species of non-human primates (monkeys, apes, ...) and have been named Simian Immunodeficiency Virus, SIV. HTLV-1 is another, more distantly related, member of the family of retroviruses to which HIV and SIV belong.
+</p><p>The "Pol" gene, which is present in the genome of all these viruses, encodes three different polypeptides important for the viral life cycles: integrase, reverse transcriptase, and protease. 
+</p><p>In this exercise you will use a data set consisting of 21 different POL-polyprotein sequences from HIV1, HIV2, chimpanzee SIV, sooty mangabey SIV, and HTLV-1. It is available via this link:
+</p>
+<dl><dd><a href="/teaching/images/d/d9/Pol21.fasta" class="internal" title="Pol21.fasta">pol21.fasta</a>
+</dd></dl>
+<a name="Step_1:_Align_protein_sequences" id="Step_1:_Align_protein_sequences"></a><h3> <span class="mw-headline">Step 1: Align protein sequences</span></h3>
+<p>Align the Pol sequences using the <a href="http://www.ebi.ac.uk/Tools/msa/mafft/" class="external text" title="http://www.ebi.ac.uk/Tools/msa/mafft/" rel="nofollow">mafft server</a> at EBI with default settings (copy/paste the alignment into the input box on the <i>mafft</i> server page, and click <i>submit</i>) . Let <u>Output format</u> be "Pearson/FASTA".
+</p><p>Once the alignment is done, save the resulting alignment as a fasta file: right-click the "Download alignment file" button on the mafft output page, and then save the file using "Save linked file as" (or whatever it is called in your particular browser) under the file name "pol21_aligned.txt". 
+</p><p><b>Make sure that:</b>
+</p>
+<ul><li> The alignment is saved in TEXT format
+</li><li> The file is located in your R working directory
+</li><li> The file is named <b>pol21_aligned.txt</b>
+</li></ul>
+<p><a href="/teaching/index.php/File:Mafft_download.png" class="image" title="Mafft download.png"><img alt="" src="/teaching/images/thumb/5/5d/Mafft_download.png/800px-Mafft_download.png" width="800" height="574" border="0" /></a>
+</p>
+<a name="Step_2:_Read_alignment_into_R" id="Step_2:_Read_alignment_into_R"></a><h3> <span class="mw-headline">Step 2: Read alignment into R</span></h3>
+<p>In the window where you are running R: read the aligned data into the variable <code> pol21</code>:
+</p>
+<pre>pol21 = read.phyDat("pol21_aligned.txt", type="AA", format="fasta")
+</pre>
+<p>In case of trouble:
+</p>
+<ul><li> Is the file in your current working directory?
+</li><li> Is the file in TEXT format? (Not HTML or similar)?
+</li><li> Is the file named <b>pol21_aligned.txt</b>?
+</li></ul>
+<a name="Step_3:_Compute_distance_matrix_from_alignment" id="Step_3:_Compute_distance_matrix_from_alignment"></a><h3> <span class="mw-headline">Step 3: Compute distance matrix from alignment</span></h3>
+<p>Compute a distance matrix from the protein sequence alignment:
+</p>
+<pre>dm = dist.hamming(pol21, exclude="pairwise")
+</pre>
+<p>The option <i>exclude="pairwise"</i> affects how gaps are treated: We do not want to count each gap character as a mutation. This option ensures that for each pair of sequences we compare gap positions are ignored (or excluded).
+</p>
+<a name="Step_4:_Compute_tree_from_distance_matrix" id="Step_4:_Compute_tree_from_distance_matrix"></a><h3> <span class="mw-headline">Step 4: Compute tree from distance matrix</span></h3>
+<p>Compute neighbor joining tree and plot as unrooted tree:
+</p>
+<pre>hivtree = NJ(dm)
+plot(hivtree, type="unrooted", lab4ut="axial", cex=0.8)
+</pre>
+<a name="Step_5:_Root_tree_using_outgroup" id="Step_5:_Root_tree_using_outgroup"></a><h3> <span class="mw-headline">Step 5: Root tree using outgroup</span></h3>
+<p>Use HTLV as outgroup and plot tree in rooted form:
+</p>
+<pre>hivtreerooted = root(hivtree, "HTLV")
+plot(hivtreerooted, type="phylogram", cex=0.8)
+</pre>
+<p>The rationale for using an outgroup to place the root of the tree is as follows: our data set consists of sequences from HIV-1, HIV-2, SIV and HTLV. We know from other evidence that the lineage leading to HTLV branched off before any of the remaining viruses diverged from each other. The root of the tree connecting the organisms investigated here, must therefore be located between the HTLV sequence (the "outgroup") and the rest (the "ingroup"). This way of finding a root is called "outgroup rooting. (As another example consider building a tree from mammal sequences - in that case a bird would be a suitable outgroup).
+</p>
+<a name="Step_6:_Add_labels_to_two_major_clusters" id="Step_6:_Add_labels_to_two_major_clusters"></a><h3> <span class="mw-headline">Step 6: Add labels to two major clusters</span></h3>
+<p>Label internal nodes, so we know what node numbers we want to use when labelling the two main clades:
+</p>
+<pre>nodelabels(cex=0.8)
+</pre>
+<p>Now, re-plot the tree and label the HIV1 and HIV2 clusters (using the nodenumbers we saw above):
+</p>
+<pre>plot(hivtreerooted, type="phylogram", cex=0.8)
+nodelabels(c("HIV-1", "HIV-2"), c(23,32), bg="white", cex=0.8)
+</pre>
+<a name="Step_7:_Consider_evolutionary_origin_of_HIV-1_and_HIV-2" id="Step_7:_Consider_evolutionary_origin_of_HIV-1_and_HIV-2"></a><h3> <span class="mw-headline">Step 7: Consider evolutionary origin of HIV-1 and HIV-2</span></h3>
+<p>The original assumption was that HIV-1 and HIV-2 were closely related variant viruses. Your tree does not support this hypothesis, but what does it then indicate? When you've thought about it, check this link for an explanation: <a href="http://www.cbs.dtu.dk/courses/biosys/binfintro/hiv_origin.php" class="external text" title="http://www.cbs.dtu.dk/courses/biosys/binfintro/hiv_origin.php" rel="nofollow">Origin of HIV-1 and HIV-2</a>
+</p>
+<a name="Step_8:_Optional:_Save_tree_and_inspect_tree_in_external_viewer" id="Step_8:_Optional:_Save_tree_and_inspect_tree_in_external_viewer"></a><h3> <span class="mw-headline">Step 8: Optional: Save tree and inspect tree in external viewer</span></h3>
+<p>It is also possible to save the tree to a Newick formatted file, and then view it in external programs. If you'd like to try this, first install the program <a href="http://tree.bio.ed.ac.uk/software/figtree/" class="external text" title="http://tree.bio.ed.ac.uk/software/figtree/" rel="nofollow">FigTree</a> (use the version for your operating system).
+</p><p>Then, from within R, write the tree to a file:
+</p>
+<pre>write.tree(hivtreerooted, file="hivtree_root.txt")
+</pre>
+<p>You can now start FigTree and open the saved file. FigTree has options for modifying fonts, line widths, etc, and also for manipulating the tree (re-rooting, displaying clusters in "cartoon" format, etc).
+</p>
+<a name="Optional_extra_exercise:_build_your_own_tree" id="Optional_extra_exercise:_build_your_own_tree"></a><h2> <span class="mw-headline"> Optional extra exercise: build your own tree </span></h2>
+<p>If you have time to spare and want to experiment with building your own tree from scratch try this task: Create a rooted phylogenetic tree with the dataset linked below, which consists of DNA sequences encoding the ribosomal protein L18 from a number of different species. L18 forms part of the 60S subunit of the ribosome. (The sequences used here are not the complete coding sequence, but lack the first 90 nucleotides or so).
+</p>
+<ul><li> <a href="/teaching/images/a/a0/L18_CDS.fasta" class="internal" title="L18 CDS.fasta">L18_CDS.fasta</a>
+</li></ul>
+<p>Recall that the steps needed to get a tree are:
+</p>
+<ul><li> Aligning the sequences
+</li><li> Computing a distance matrix from the alignment
+</li><li> Building a neighbour joining tree from the distance matrix
+</li><li> Optionally: Rooting the tree on an outgrip
+</li><li> Plotting the tree
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 18/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wiki_27611:pcache:idhash:1464-0!1!0!!en!2!edit=0 and timestamp 20150427104327 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.bio.dtu.dk/teaching/index.php/Phylogenetic_Clustering_exercise_(chemometrics)">http://wiki.bio.dtu.dk/teaching/index.php/Phylogenetic_Clustering_exercise_(chemometrics)</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/teaching/index.php/Phylogenetic_Clustering_exercise_(chemometrics)" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/teaching/index.php?title=Talk:Phylogenetic_Clustering_exercise_(chemometrics)&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/teaching/index.php?title=Phylogenetic_Clustering_exercise_(chemometrics)&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/teaching/index.php?title=Phylogenetic_Clustering_exercise_(chemometrics)&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/teaching/index.php?title=Special:UserLogin&amp;returnto=Phylogenetic_Clustering_exercise_(chemometrics)" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/sysbio_logo.gif);" href="/teaching/index.php/Systems_Biology_Teaching_Wiki" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Main-Page"><a href="/teaching/index.php/Systems_Biology_Teaching_Wiki">Main Page</a></li>
+				<li id="n-portal"><a href="/teaching/index.php/teaching:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/teaching/index.php/teaching:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/teaching/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/teaching/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/teaching/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/teaching/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search teaching [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/teaching/index.php/Special:WhatLinksHere/Phylogenetic_Clustering_exercise_(chemometrics)" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/teaching/index.php/Special:RecentChangesLinked/Phylogenetic_Clustering_exercise_(chemometrics)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/teaching/index.php/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/teaching/index.php?title=Phylogenetic_Clustering_exercise_(chemometrics)&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/teaching/index.php?title=Phylogenetic_Clustering_exercise_(chemometrics)&amp;oldid=15813" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/teaching/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 27 April 2015, at 09:45.</li>
+					<li id="viewcount">This page has been accessed 100 times.</li>
+					<li id="privacy"><a href="/teaching/index.php/teaching:Privacy_policy" title="teaching:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="/teaching/index.php/teaching:About" title="teaching:About">About teaching</a></li>
+					<li id="disclaimer"><a href="/teaching/index.php/teaching:General_disclaimer" title="teaching:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.160 secs. --></body></html>

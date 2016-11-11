@@ -1,0 +1,7 @@
+Fields {*}
+Tables {Building, DTU_delimiter}
+Where {Building.obj intersects DTU_delimiter.Obj}
+Group {}
+Order {}
+Into {2}
+Browse

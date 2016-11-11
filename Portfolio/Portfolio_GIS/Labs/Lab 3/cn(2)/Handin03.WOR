@@ -1,0 +1,120 @@
+!Workspace
+!Version  950
+!Charset WindowsLatin1
+Open Table "DTU_delimiter(2)\lab\DTU_delimiter" As DTU_delimiter Interactive
+Open Table "DDOby2003.TAB" As DDOby2003 Interactive
+Open Table "DTUcampusOverview(2).TAB" As DTUcampusOverview_2_ Interactive
+Map From DTU_delimiter,DTUcampusOverview_2_,DDOby2003
+  Position (1.19167,2.625) Units "in"
+  Width 5.95 Units "in" Height 2.35 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (720952.0091,6188021.746)
+  Zoom 2.452142829 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With date
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+  Layer 2
+    Display Graphic
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+    Zoom (0.0068, 2.7) Units "mi" Off 
+  contrast 50 
+  brightness 50 
+  alpha 255 
+    transparency off 
+  color 0 
+    grayscale off 
+  Layer 3
+    Display Off
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+    Zoom (0.0016, 0.62) Units "mi" Off 
+  contrast 50 
+  brightness 50 
+  alpha 255 
+    transparency off 
+  color 0 
+    grayscale off 
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From DTUcampusOverview_2_
+  Position (0.291667,1.875) Units "in"
+  Width 7.80833 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (720882.3178,6188060.26)
+  Zoom 3.024538197 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+    Zoom (0.0069, 2.7) Units "mi" Off 
+  contrast 50 
+  brightness 50 
+  alpha 255 
+    transparency off 
+  color 0 
+    grayscale off 
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From DDOby2003
+  Position (0.916667,2.69167) Units "in"
+  Width 7.80833 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (720995.9389,6188200.028)
+  Zoom 0.6815757999 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0)  Brush (2,16777215,16777215)  Symbol (35,0,12)  Line (1,2,0)  Font ("Arial",0,9,0)
+    Selectable Off
+    Zoom (0.0016, 0.62) Units "mi" Off 
+  contrast 50 
+  brightness 50 
+  alpha 255 
+    transparency off 
+  color 0 
+    grayscale off 
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1
+Map From DTU_delimiter
+  Position (1.125,2.96667) Units "in"
+  Width 7.80833 Units "in" Height 3.33333 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll On Enhanced On Smooth Text Antialias Image High
+Set Map
+  CoordSys Earth Projection 8, 104, "m", 15, 0, 0.9996, 500000, 0
+  Center (344471.4077,6184996.012)
+  Zoom 2.299126868 Units "mi"
+  Preserve Zoom Display Zoom
+  Distance Units "mi" Area Units "sq mi" XY Units "m"
+Set Map
+  Layer 1
+    Display Graphic
+    Global Pen (1,2,0) Brush (2,16777215,16777215) Symbol (35,0,12) Line (1,2,0) Font ("Arial",0,9,0)
+    Label Line Arrow Position Above Font ("Arial",0,9,0) Pen (1,2,0) 
+      With date
+      Parallel On Auto Off Overlap Off Duplicates Off Offset 2
+      Visibility On
+Set Window FrontWindow() Printer
+ Name "EPSON WF-3520 Series" Orientation Portrait Copies 1
+ Papersize 1

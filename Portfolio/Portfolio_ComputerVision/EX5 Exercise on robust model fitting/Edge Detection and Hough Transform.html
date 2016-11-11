@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0056)http://www.cs.uregina.ca/Links/class-info/425-nova/Lab4/ -->
+<html hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Edge Detection and Hough Transform</title>
+<style type="text/css">
+<!--
+.greenText {
+	color: #009900;
+}
+-->
+</style>
+<style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body>
+<h1>CS425 Lab: Edge Detection and Hough Transform </h1>
+<hr>
+<h2>1. Edge Detection </h2>
+<h3>1.1 Problem Overview</h3>
+<p>In the field of Image Processing, the extraction of geometric features from images is very common problem. Over the years, several different approaches have been devised to extract these features. </p>
+<p>These different approaches can be characterized and classified in several different ways. </p>
+<p>Some of the techniques involve <strong>global examination</strong> of the image, while others only involve <strong>local examination</strong> of each pixel in the image.</p>
+
+<h3>1.2 What is Edge Detection?</h3>
+<p>Typically, the first step in the process is to perform some form of edge detection on the image, and to generate a new <strong>Binary edge</strong> image that provides the necessary segmentation of the original image. </p>
+<p>Edge detection algorithms operate on the premise that each pixel in a grayscale digital image has a <strong>First derivative</strong>, with regard to the change in intensity at that point, if a significant change occurs at a given pixel in the image, then a black pixel is placed in the binary image, otherwise, a white pixel is placed there instead.</p>
+<p>In general, the gradient is compared at each pixel that gives the degree of change at each point in the image.The question basically amounts to how much change in the intensity should be required in order to constitute a feature point in the binary image. </p>
+<p>And usually a predefined threshold value T is used to classified edge points. </p>
+<p>To find the accuracy location of an edge, a <strong> Second derivative </strong> is often used to find the point that corresponds to the local maximum and minimum in the first derivative.</p>
+<p>This is often referred to as a <strong>Zero Crossing </strong> because it is the point at which the second derivative equals to zero, but its left and right neighbors are non-zero and have opposite signs.</p>
+
+<h3>1.3 Edge Detection using Function edge in MATLAB </h3>
+<p>IPT's function <strong>edge</strong> provides several derivative estimators based on the criteria just you learned above. </p>
+<p>For some of these estimators, it is possible to specify whether the edge detector is sensitive to horizontal or vertical edges or to both. The general syntax for the edge function is:</p>
+<p> </p><h3><strong>[g, t]= edge(f, 'method', parameters)</strong>;</h3><p></p>
+<p>where f is the input image, the most popularly used approaches are listed in the following table, and parameters are additional parameters explained in the following discussion.</p>
+<p>In the output, g is a logical array with 1's at the locations where edge points were detected in f and 0's elsewhere. Parameter t is optional, it gives the threshold used by edge to determine which gradient values are strong enough to be called edge points.</p>
+
+
+<table width="728" border="1">
+  <tbody><tr>
+    <th width="296" scope="col">Edge Detector</th>
+    <th width="432" scope="col">Basic Properties </th>
+  </tr>
+  <tr>
+    <td><strong>Sobel</strong></td>
+    <td>Finds edges using the Sobel approximation to the derivatives.</td>
+    
+  </tr>
+  <tr>
+    <td><strong>Canny</strong></td>
+    <td>Finds edges by looking for local maxima of the gradient of f(x,y). The gradient is calculated using the derivative of a Gaussian filter. The method uses two thresholds to detect strong and weak edges, and includes the weak edges in the output only if they are connnected to strong edges. Therefore, this method is more likely to detect true weak edges.</td>
+    
+  </tr>
+  <tr>
+    <td><strong>Zero Crossing</strong> </td>
+    <td>Finds edges by looking for zero crossing after filtering f(x,y) with a user defined filter.</td>
+    
+  </tr>
+</tbody></table>
+<p>Now let us try those different methods and parameters to see what is the difference between them:</p>
+<pre>T=100;
+f=zeros(128,128);
+f(32:96,32:96)=255;
+[g1, t1]=edge(f, 'sobel', 'vertical');
+imshow(g1);
+t1
+</pre>
+
+<img src="./Edge Detection and Hough Transform_files/sobel.jpg">
+
+<pre>sigma=1;
+f=zeros(128,128);
+f(32:96,32:96)=255;
+[g3, t3]=edge(f, 'canny', [0.04 0.10], sigma);
+figure,imshow(g3);
+t3
+</pre>
+
+<img src="./Edge Detection and Hough Transform_files/canny.jpg">
+<p>&nbsp;</p>
+<hr>
+<h2>2. Hough Transform </h2>
+<h3>2.1 What is the Hough Transform</h3>
+<p>The Hough Transform (HT) is a robust method for finding lines in images that was developed by Paul Hough.</p>
+<p>The main idea for the HT is as follows:</p>
+<ul>
+  <li>For each line L, there is a unique line L?perpendicular to L which passes through the origin. </li>
+  <li>L?has a unique <strong>distance</strong> and <strong>angle</strong> from the horizontal axis of the image. This angle and distance define a point in the parameter space, sometimes known as Hough space. </li>
+  <li>A point in image space has an infinite number of lines that could pass through it, each with a unique distance and angle.</li>
+  <li>This set of lines corresponds to a sinusoidal function in parameter space. Two points on a line in image space correspond to two sinusoids which cross at a point in parameter space. </li>
+  <li>That point in parameter space corresponds to that line in image space, and all sinusoids corresponding to points on that line will pass through that point.</li>
+</ul>
+<p>The real solution to implement this algorithm is to quantize the parameter space by using a <strong>2D array</strong> of counters, where the array coordinates represent the parameters of the line; this is commonly known as an <strong>accumulator array</strong>.</p>
+
+<p>The HT method for finding lines in images generally consists of the following three stages:</p>
+<ul>
+  <li>Perform accumulation on the <strong>accumulator array</strong> using the binary edge image.</li>
+  <li>Find <strong>peak</strong> values in the accumulator array </li>
+  <li>Verify that the peaks found correspond to legitimate lines, rather than noise.</li>
+</ul>
+
+<h3>2.2 Line detection using Hough Transform in MATLAB </h3>
+<p>The MATLAB has a function called <strong>hough</strong> that computes the Hough Transform.</p>
+
+<p>In the following example, we will illustrate the use of function <strong>hough</strong> on a simple binary image.</p>
+
+<p>First we consruct an image containing isolated foreground pixels in serveral locations.</p>
+
+<pre>f=zeros(101,101);
+f(1,1)=1;
+f(101,1)=1;
+f(1,101)=1;
+f(101,101)=1;
+f(51,51)=1;</pre>
+<p>Then we compute and display the Hough Transform.</p>
+<pre>H=hough(f);
+imshow(H,[])</pre>
+<p>The result you got should looks like this:</p>
+<img src="./Edge Detection and Hough Transform_files/houghspace.jpg">
+<p>&nbsp;</p>
+<h3>2.3 Hough Transfrom Peak Detection</h3>
+<p>Now we have hough space stored in H, the next step is <strong>peak</strong> detection.</p>
+<p>MATLAB provides us a function named <strong>houghpeaks</strong> to do this, the syntax is</p>
+<p></p><h3><strong>[r, c, HNEW]= houghpeaks(H, numpeaks)</strong>;</h3><p></p>
+<p>where <strong>H</strong> is the Hough Transfrom matrix, and the <strong>numpeaks</strong> is the maximum number of peak locations to look for.</p><p>
+</p><p>In the output,r and c are the row and column coordinates of the identified peaks, <strong>HNEW</strong> is the Hough Transform with peak neighborhood suppressed.</p>
+<h3>2.4 Hough transform line detection and linking</h3>
+<p>Once a set of candidate peaks has been identified in the Hough transform, it remains to be determined if there are line segments associated with those peaks, as well as start and ending points.</p>
+<p>For each peak, the first step is to find the location of all nonzero pixels in the image that contributed to that peak. the function <strong>houghpixels</strong> can do this.</p>
+<p>The detail of this function is left as your future reading.</p>
+<p>&nbsp;</p>
+<hr>
+<h3>3. Global Threshoding</h3>
+<p>Image threshoding plays a very important role in image segmentation.</p>
+<p>In this section we discuss the way of choosing the threshod automatically.</p>
+<p>For choosing a threshod automatically, the following algorithm is applied:</p>
+<ol>
+  <li>Select an initial estimate for T.(A suggested initial value is the midpoint between the minimum and maximun intensity values in the image.)</li>
+  <li>Segment the image using T. This will produce two groups of pixels, G1 consisting of all pixels with intensity values &gt; T, and G2, consisting of pixels with values &lt; T.</li>
+  <li>Compute the average intensity values x1 and x2 for the pixels in regions G1 and G2.</li>
+  <li>Compute a new threshod value: T=1/2(x1+x2)</li>
+  <li>Repeat steps 2 through 4 until the difference in T in successive iterations is smaller than a predifined parameter T0.</li>
+</ol>
+<p>The above iterative method can be implemented as follows:</p>
+<pre>T=0.5*(double(min(f(:)))+double(max(f(:))));
+done = false;
+while ~done
+  g = f &gt;= T;
+  Tnext = 0.5*(mean(f(g))+mean(f(~g)));
+  done = abs (T-Tnext) &lt; 0.5;
+  T = Tnext;
+end
+</pre>
+<p>where <strong>g</strong> is a binary mask, <strong>f(g)</strong> is a subset of f defined by g.</p>
+<p>You can also use IPT's function <strong>graythresh</strong> to reah the same goal.</p>
+<p></p><h3><strong>T = graythresh(f)</strong></h3><p></p>
+<hr>
+<h2>4. References</h2>
+<ul>
+  <li><em>Digital Image Processing, Using MATLAB</em>, by Rafael C. Gonzalez, Richard E. Woods, and Steven L. Eddins </li>
+  <li><em>Image Processing Toolbox, For Use with MATLAB</em> (MATLAB's documentation)--available through MATLAB's help menu or online at: <br>
+      <a href="http://www.mathworks.com/access/helpdesk/help/toolbox/images/">http://www.mathworks.com/access/helpdesk/help/toolbox/images/</a></li>
+</ul>
+<hr>
+<h2>5. Exercises</h2>
+<h3>Part 1: Identifying and Using <strong>Edge</strong> function</h3>
+<ol>
+  <li>Download the following image "<a href="./Edge Detection and Hough Transform_files/building.jpg">building.jpg</a>" and store it in MATLAB's "Current Directory". <br>
+  <img src="./Edge Detection and Hough Transform_files/building.jpg" width="560" height="420">  </li>
+  <li>Identify which of the following is the result of zerocrossing or canny detector<br>
+    <table width="200" border="0" cellspacing="3">
+      <tbody><tr>
+        <td><div align="center">Image 1 </div></td>
+        <td><div align="center">Image 2 </div></td>
+      </tr>
+      <tr>
+        <td><img src="./Edge Detection and Hough Transform_files/canny_building.jpg" width="560" height="420"></td>
+        <td><img src="./Edge Detection and Hough Transform_files/zerocross_building.jpg" width="560" height="420"></td>
+      </tr>
+    </tbody></table>
+  </li>
+  <li>Reproduce the results for input image <strong>building.jpg</strong>. I encourage you to try different T and Sigma to get the best result.</li>
+</ol>
+<h4>Deliverables:</h4>
+<ul>
+  <li>Identification of zero crossing and canny detectors of above images. </li>
+  <li>Reproduced zero crossing and canny detectors for <strong>building.jpg</strong>.</li>
+</ul>
+<h3>Part 2: Automatical Threshoding </h3>
+<ol>
+  <li>Download the following image "<a href="./Edge Detection and Hough Transform_files/text.jpg">text.jpg</a>" and store it in MATLAB's "Current Directory". <br>
+  <img src="./Edge Detection and Hough Transform_files/text.jpg" width="560" height="233">  </li>
+  
+  <li>Reproduce the results to get the image looks like the following <strong>enhace_text.jpg</strong>.<br> 
+      <img src="./Edge Detection and Hough Transform_files/enhance_text.jpg" width="560" height="233"></li>
+</ol>
+<h4>Deliverables:</h4>
+<ul>
+  <li>Value of optimal T</li>
+  <li>image after threshoding</li>
+  </ul>
+<p>&nbsp;</p>
+
+
+</body></html>

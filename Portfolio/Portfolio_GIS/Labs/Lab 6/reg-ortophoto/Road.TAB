@@ -1,0 +1,15 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 3
+    streetName Char (30) ;
+    numberOfLanes Smallint ;
+    lineGeometry Float ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "5e4ad253-d738-4127-af33-cfd23e629f4a"
+end_metadata

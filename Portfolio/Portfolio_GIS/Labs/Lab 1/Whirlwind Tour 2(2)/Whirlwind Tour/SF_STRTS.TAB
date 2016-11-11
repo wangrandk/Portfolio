@@ -1,0 +1,9 @@
+!Table
+!Version 100
+Open Table "SF_STRT1" Hide
+Open Table "SF_STRT2" Hide
+
+Create View SF_STRTS As
+Select Street,FromLeft,ToLeft,FromRight,ToRight,Class,Tiger_Refnum
+From SF_STRT2, SF_STRT1
+Where SF_STRT2.MI_refnum=SF_STRT1.MI_refnum

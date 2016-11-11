@@ -1,0 +1,18 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  File "ddoby2003.ecw"
+  Type "RASTER"
+  (720104.63378176349,6188931.2406576956) (0,0) Label "Pt 1",
+  (721512.63378176349,6187059.9406576958) (14080,18713) Label "Pt 2",
+  (721512.63378176349,6188931.2406576956) (14080,0) Label "Pt 3",
+  (720104.63378176349,6187059.9406576958) (0,18713) Label "Pt 4"
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Units "m"
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "46da52b6-608b-4824-9545-1588e1eef4fb"
+end_metadata

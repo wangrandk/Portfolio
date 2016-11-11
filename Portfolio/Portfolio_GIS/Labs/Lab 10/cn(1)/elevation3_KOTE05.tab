@@ -1,0 +1,47 @@
+!table
+!version 500
+!charset WindowsLatin1
+
+Definition Table
+  File "elevation3_kote05.ers"
+  Type "RASTER"
+  (719936.25,6186986.25) (0,271) Label "Pt 1",
+  (719936.25,6189018.75) (0,0) Label "Pt 2",
+  (721563.75,6186986.25) (217,271) Label "Pt 3",
+  (721563.75,6189018.75) (217,0) Label "Pt 4"
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Units "m"
+  RasterStyle 6 1
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "73ca0d0d-4865-43e3-bd00-833340093b66"
+"\Encom" = ""
+"\Encom\Grid" = ""
+"\Encom\Grid\Display" = ""
+"\Encom\Grid\Display\Min Cell Percentile to Colour" = "0.00"
+"\Encom\Grid\Display\Min Cell Percentage to Colour" = "0.00"
+"\Encom\Grid\Display\SunShadowDepth" = "50.0"
+"\Encom\Grid\Display\Max Cell Percentage to Colour" = "100.00"
+"\Encom\Grid\Display\SunHighlightAzimuth" = "315.0"
+"\Encom\Grid\Display\Colouring" = ""
+"\Encom\Grid\Display\Colouring\InterpolateColor" = "1"
+"\Encom\Grid\Display\SunHighlightElevation" = "60.0"
+"\Encom\Grid\Display\LUT" = "BluSteel.CLR"
+"\Encom\Grid\Display\SunAzimuthDeg" = "45.0"
+"\Encom\Grid\Display\ClipMinMaxColour" = "0"
+"\Encom\Grid\Display\SunElevation" = "60.0"
+"\Encom\Grid\Display\SunColorSaturation" = "0.0"
+"\Encom\Grid\Display\Max Cell Value To Colour" = "47.5000000000000"
+"\Encom\Grid\Display\SunHighlight" = "0"
+"\Encom\Grid\Display\SunIntensitySaturation" = "100.0"
+"\Encom\Grid\Display\Min Cell Value To Colour" = "0.0009364392608"
+"\Encom\Grid\Display\Max Cell Percentile to Colour" = "100.00"
+"\Encom\Grid\Display\MinCellValue" = "0.00093643926084"
+"\Encom\Grid\Display\SunShading" = "0"
+"\Encom\Grid\Display\ClipKey" = "GRID"
+"\Encom\Grid\Display\Type" = "1"
+"\Encom\Grid\Display\SunHighlightSaturation" = "0.0"
+"\Encom\Grid\Display\SunHighlightIntensity" = "50.0"
+"\Encom\Grid\Display\MaxCellValue" = "47.50000000000000"
+end_metadata

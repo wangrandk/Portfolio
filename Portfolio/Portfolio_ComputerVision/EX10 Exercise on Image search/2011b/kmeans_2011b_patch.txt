@@ -1,0 +1,150 @@
+1,2c1,2
+< function [idx, C, sumD, D] = kmeans(X, k, varargin)
+< %KMEANS K-means clustering.
+---
+> function [idx, C, sumD, D, iter1, iter] = kmeans3(X, k, varargin)
+> %KMEANS3 K-means clustering (Accelerated version).
+23a24,30
+> %   [IDX, C, SUMD, D, ITER1] = KMEANS3(X, K) returns the number of
+> %   iterations in the batch-update phase in ITER1.
+> %
+> %   [IDX, C, SUMD, D, ITER1, ITER] = KMEANS3(X, K) returns the overall
+> %   number of iterations (batch-update phase plus online-update phase)
+> %   in ITER.
+> %
+120a128,130
+> %   This is the accelerated version. The patch is made by Da Kuang.
+> %   Mar 26, 2012
+> 
+125c135
+< [~,wasnan,X] = statremovenan(X);
+---
+> [~,wasnan,X] = statremovenan2(X);
+137c147
+<     = internal.stats.parseArgs(pnames, dflts, varargin{:});
+---
+>     = parseArgs2(pnames, dflts, varargin{:});
+140c150
+< distance = internal.stats.getParamVal(distance,distNames,'''Distance''');
+---
+> distance = getParamVal2(distance,distNames,'''Distance''');
+205c215
+< emptyact = internal.stats.getParamVal(emptyact,emptyactNames,'''EmptyAction''');
+---
+> emptyact = getParamVal2(emptyact,emptyactNames,'''EmptyAction''');
+207c217
+< [~,online] = internal.stats.getParamVal(online,{'on','off'},'''OnlinePhase''');
+---
+> [~,online] = getParamVal2(online,{'on','off'},'''OnlinePhase''');
+269a280,284
+> 
+>     if strcmp(distance, 'cosine') | strcmp(distance, 'correlation')
+>         normC = sqrt(sum(C.^2, 2));
+>         C = C ./ normC(:, ones(1,p));
+>     end
+280a296
+>         iter1 = iter;
+288c304
+<             warning(message('stats:kmeans:FailedToConverge', maxit, repsMsg( rep, reps )));
+---
+>             warning(message('stats:kmeans:FailedToConverge', iter, repsMsg( rep, reps )));
+310a327,328
+>             iter1Best = iter1;
+>             iterBest = iter;
+336a355,356
+> iter1 = iter1Best;
+> iter = iterBest;
+339c359
+<     idx = statinsertnan(wasnan, idx);
+---
+>     idx = statinsertnan2(wasnan, idx);
+369a390
+>             drop_flag = false;
+379a401,402
+>                         copy_changed = changed;
+>                         drop_flag = true;
+384c407,408
+<                         
+---
+>                         copy_changed = changed;
+>                         drop_flag = true;
+398a423,426
+>                             % For the accelerated version, we don't need to normalize
+>                             % C(i,:) here even if 'distance' is 'cosine' or 'correlation',
+>                             % because for a singleton cluster, C(i,:)=X(lonely,:) is already
+>                             % normalized.  --Da Kuang
+417a446,449
+>                 if drop_flag
+>                     changed = copy_changed;
+>                 end
+>                 D(:,changed) = distfun(X, C(changed,:), distance, iter);
+483a516,525
+>             case {'cosine', 'correlation'}
+>                 C = NaN(k, p);
+>                 counts = zeros(k, 1);
+>                 for i = 1 : k
+>                     members = (idx == i);
+>                     if any(members)
+>                         counts(i) = sum(members);
+>                         C(i,:) = sum(X(members,:),1) / counts(i); % unnormalized
+>                     end
+>                 end
+488a531
+>         prevtotsumD = Inf;
+506a550
+>                     Del(:, changed) = max(dist2(X, C(changed, :)), 0);
+513c557
+<                         Del(:,i) = (m(i) ./ (m(i) + sgn)) .* sum((X - C(repmat(i,n,1),:)).^2, 2);
+---
+>                         Del(:,i) = (m(i) ./ (m(i) + sgn)) .* Del(:,i);
+533c577
+<                     % This can be done without a loop, but the loop saves memory allocations
+---
+>                     Del(:, changed) = X * C(changed, :)';
+535d578
+<                         XCi = X * C(i,:)';
+538,539c581,582
+<                         Del(:,i) = 1 + sgn .*...
+<                             (m(i).*normC(i) - sqrt((m(i).*normC(i)).^2 + 2.*sgn.*m(i).*XCi + 1));
+---
+>                         normS = m(i) * normC(i);
+>                         Del(:,i) = 1 + sgn .* ( normS - sqrt( normS.^2 + (2*m(i)*sgn).*Del(:,i) + 1 ) );
+561d603
+<             prevtotsumD = totsumD;
+590a633,636
+>                 if prevtotsumD <= totsumD
+>                     break;
+>                 end
+>                 prevtotsumD = totsumD;
+656,662c702
+<         for i = 1:nclusts
+<             D(:,i) = (X(:,1) - C(i,1)).^2;
+<             for j = 2:p
+<                 D(:,i) = D(:,i) + (X(:,j) - C(i,j)).^2;
+<             end
+<             % D(:,i) = sum((X - C(repmat(i,n,1),:)).^2, 2);
+<         end
+---
+>         D = max(dist2(X, C), 0);
+672,681c712,714
+<         % The points are normalized, centroids are not, so normalize them
+<         normC = sqrt(sum(C.^2, 2));
+<         if any(normC < eps(class(normC))) % small relative to unit-length data points
+<             error(message('stats:kmeans:ZeroCentroid', iter, repsMsg( rep, reps )));
+<             % 'Zero cluster centroid created at iteration %d.',iter);
+<         end
+<         
+<         for i = 1:nclusts
+<             D(:,i) = max(1 - X * (C(i,:)./normC(i))', 0);
+<         end
+---
+>         % For the accelerated version, centroids are already
+>         % normalized (only in batch-update phase). --Da Kuang
+>         D = max(1 - X * C', 0);
+721a755,760
+>                 normCi = norm(centroids(i,:));
+>                 if normCi < eps(class(normCi)) % small relative to unit-length data points
+>                     error('stats:kmeans:ZeroCentroid', ...
+>                           'Zero cluster centroid created at iteration %d.',iter);
+>                 end
+>                 centroids(i,:) = centroids(i,:)/normCi;

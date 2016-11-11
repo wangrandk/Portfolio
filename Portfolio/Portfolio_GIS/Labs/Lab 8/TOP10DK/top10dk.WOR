@@ -1,0 +1,356 @@
+!Workspace
+!Version 400
+!Charset WindowsLatin1
+Open Table "HOJDE\KURVER" As KURVER
+Open Table "GEO\NATUR\BRUGSGR" As BRUGSGR
+Open Table "GEO\TEKNIK\TELEMAST" As TELEMAST
+Open Table "GEO\TRAFIK\JERNBANE" As JERNBANE
+Open Table "GEO\TRAFIK\VEJAND" As VEJAND
+Open Table "GEO\TRAFIK\VEJ36M" As VEJ36M
+Open Table "GEO\TRAFIK\VEJ6M" As VEJ6M
+Open Table "GEO\TRAFIK\MOTORVEJ" As MOTORVEJ
+Open Table "GEO\TRAFIK\STI" As STI
+Open Table "GEO\TEKNIK\TEKNAR" As TEKNAR
+Open Table "GEO\TEKNIK\HJSPLEDN" As HJSPLEDN
+Open Table "GEO\NATUR\VAADOMR" As VAADOMR
+Open Table "GEO\NATUR\TRAGRUP" As TRAGRUP
+Open Table "GEO\NATUR\SKOV" As SKOV
+Open Table "GEO\NATUR\SAND" As SAND
+Open Table "GEO\NATUR\LEVHEGN" As LEVHEGN
+Open Table "GEO\NATUR\GARTNERI" As GARTNERI
+Open Table "GEO\NATUR\DIGE" As DIGE
+Open Table "GEO\KULTUR\SPORTANL" As SPORTANL
+Open Table "GEO\KULTUR\REKROMR" As REKROMR
+Open Table "GEO\KULTUR\KIRKEGD" As KIRKEGD
+Open Table "GEO\KULTUR\FORTID" As FORTID
+Open Table "GEO\HYDRO\VANDL_BR" As VANDL_BR
+Open Table "GEO\HYDRO\SOE" As SOE
+Open Table "GEO\HYDRO\KYST" As KYST
+Open Table "GEO\HYDRO\VANDLOEB" As VANDLOEB
+Open Table "GEO\HYDRO\HAVN" As HAVN
+Open Table "GEO\HYDRO\GROEFT" As GROEFT
+Open Table "GEO\BYGNING\DRIVHUS" As DRIVHUS
+Open Table "GEO\BYGNING\SILO" As SILO
+Open Table "GEO\BYGNING\BYGNING" As BYGNING
+Open Table "GEO\BEBYG\LAVBEBYG" As LAVBEBYG
+Open Table "GEO\BEBYG\HOJBEBYG" As HOJBEBYG
+Open Table "GEO\BEBYG\INDUSTRI" As INDUSTRI
+Open Table "GEO\BEBYG\BYKERNE" As BYKERNE
+Open Table "ADM\SOGNGREN" As SOGNGREN
+Open Table "ADM\KOMGRENS" As KOMGRENS
+Open Table "ADM\AMTGRENS" As AMTGRENS
+Open Table "NAVNE\NAVNE" As NAVNE
+Open Table "NAVNE\TEKSTER" As TEKSTER
+Open Table "GEO\TEKNIK\parker" As parker
+Open Table "KOSMETIK\hav" As hav Interactive
+Map From TEKSTER,NAVNE,TELEMAST,FORTID,TRAGRUP,STI,
+  VEJAND,VEJ36M,VEJ6M,MOTORVEJ,JERNBANE,BRUGSGR,
+  HJSPLEDN,LEVHEGN,DIGE,VANDL_BR,KYST,HAVN,
+  GROEFT,DRIVHUS,SILO,BYGNING,SOE,KURVER,
+  VANDLOEB,parker,TEKNAR,VAADOMR,SKOV,SAND,
+  GARTNERI,SPORTANL,REKROMR,KIRKEGD,LAVBEBYG,INDUSTRI,
+  HOJBEBYG,BYKERNE,SOGNGREN,KOMGRENS,AMTGRENS,hav 
+  Position (0.03125,0.0208333) Units "in"
+  Width 8.44792 Units "in" Height 5.66667 Units "in" 
+Set Window FrontWindow() ScrollBars Off Autoscroll Off
+Set Map
+  CoordSys Earth Projection 8, 28, "m", 9, 0, 0.9996, 500000, 0
+  Center (719236.5883,6190711.875)
+  Zoom 19580.23347 Units "m"
+  Preserve Zoom Display Zoom
+  Distance Units "m" Area Units "sq m" XY Units "m"
+Set Map
+  Layer 1
+    Display Graphic
+    Zoom (1000, 4000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto On Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 2
+    Display Graphic
+    Zoom (0, 20000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 3
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 4
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 5
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 6
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 7
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 8
+    Display Graphic
+    Zoom (0, 25000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 9
+    Display Graphic
+    Zoom (0, 25000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 10
+    Display Graphic
+    Zoom (0, 25000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 11
+    Display Graphic
+    Zoom (0, 25000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 12
+    Display Graphic
+    Zoom (0, 4000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 13
+    Display Graphic
+    Zoom (0, 50000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 14
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 15
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 16
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 17
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 18
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 19
+    Display Graphic
+    Zoom (0, 5000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 20
+    Display Graphic
+    Zoom (0, 4000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 21
+    Display Graphic
+    Zoom (0, 4000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 22
+    Display Graphic
+    Zoom (0, 4000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 23
+    Display Graphic
+    Zoom (0, 20000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 24
+    Display Graphic
+    Zoom (0, 7000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 25
+    Display Graphic
+    Zoom (0, 50000) Units "m" 
+    Label Line Arrow Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 26
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With ID_NR
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 27
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 28
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 29
+    Display Graphic
+    Zoom (0, 50000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 30
+    Display Graphic
+    Zoom (0, 50000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 31
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 32
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 33
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 34
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 35
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 36
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 37
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 38
+    Display Graphic
+    Zoom (0, 10000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With OBJEKT_TYPE
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 39
+    Display Graphic
+    Zoom (0, 0) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 40
+    Display Graphic
+    Zoom (0, 1000000) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 41
+    Display Graphic
+    Zoom (0, 0) Units "m" 
+    Label Line None Position Above Right Font ("Arial",257,9,0,16777215) Pen (1,2,0) 
+      With NAVN
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+  Layer 42
+    Display Graphic
+    Label Line None Position Center Font ("Arial",0,9,0) Pen (1,2,0) 
+      With KATEGORI
+      Parallel On Auto Off Overlap Off Duplicates On Offset 2
+      Visibility On
+Set Window FrontWindow() Title "TOP10DK "

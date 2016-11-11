@@ -1,0 +1,7 @@
+!Workspace
+!Version 400
+!Charset WindowsLatin1
+  Run application "TOP10DK.WOR"
+  Run application "APP\KMSFIND.MBX"
+  Run application "APP\TOP10DK.MBX"
+'  Run application "APP\TABLEMGR.MBX"

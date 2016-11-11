@@ -1,0 +1,15 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 3
+    instituter Char (10) ;
+    Oticonsal Char (10) ;
+    Adminsration Char (10) ;
+begin_metadata
+"\IsReadOnly" = "FALSE"
+"\MapInfo" = ""
+"\MapInfo\TableID" = "1cced443-e86d-429b-ac69-03685eb1a771"
+end_metadata

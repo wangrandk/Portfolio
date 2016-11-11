@@ -1,0 +1,40 @@
+!table
+!version 300
+!charset WindowsLatin1
+
+Definition Table
+  Type NATIVE Charset "WindowsLatin1"
+  Fields 33
+    UUID Char (32) ;
+    FEAT_ID Integer ;
+    DAGI_ID Integer ;
+    FEAT_KODE Char (15) ;
+    SUB_KODE Smallint ;
+    FEAT_TYPE Char (40) ;
+    FEAT_STTXT Char (20) ;
+    GEOM_STTXT Char (20) ;
+    AREAL Float ;
+    AFSTOMNR Char (2) ;
+    AFSTOMNAVN Char (40) ;
+    OPSTILKRNR Char (2) ;
+    OPSTILNAVN Char (40) ;
+    VALGKRNR Char (2) ;
+    STORKRNR Char (2) ;
+    STORKRNAVN Char (40) ;
+    LANDSDELNR Char (1) ;
+    LANDSNAVN Char (40) ;
+    KOMKODE Char (4) ;
+    KOMNAVN Char (50) ;
+    GYLDIG_FRA Date ;
+    GYLDIG_TIL Date ;
+    DQ_SPECIFK Char (40) ;
+    DQ_STATEM Char (40) ;
+    DQ_DESCR Char (40) ;
+    DQ_PROCESS Char (40) ;
+    DQ_RESPONS Char (40) ;
+    DQ_POSACPL Char (40) ;
+    DQ_POSACLV Char (40) ;
+    TIMEOF_CRE Date ;
+    TIMEOF_PUB Date ;
+    TIMEOF_REV Date ;
+    TIMEOF_UDT Date ;

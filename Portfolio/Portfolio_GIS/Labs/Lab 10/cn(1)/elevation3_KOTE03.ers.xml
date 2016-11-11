@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<root>
+	<Operation>
+		<!--Created by IGridding on [28/04/15 15:41:16]-->
+		<!--From within Engage3D-->
+		<!--This file defines the settings used to create the file-->
+		<!--C:\Users\RAN\OneDrive\Documents\GeographicInformationSystems\Labs\Lab 10\cn(1)\elevation3_KOTE03.ers-->
+		<Application SchemaVersion="1" ParentApplication="Engage3D" Module="IGridding" ModuleVersion="3.0.30.0" Date="[28/04/15 15:41:16]"/>
+		<Input>
+			<Dataset InputTAB="C:\Users\RAN\OneDrive\Documents\GeographicInformationSystems\Labs\Lab 10\cn(1)\elevation3.TAB">
+				<Fields>
+					<Field Name="KOTE"/>
+				</Fields>
+			</Dataset>
+			<Breaklines Count="0"/>
+			<Data CoincidentPoints="Use average" ApplyDataClip="0">
+				<FieldCondition Band="0" Field="KOTE" Defined="1" CaseSensitive="0" NullDefined="1" Convert2NULLVal="-100000000000000010000000000000000.000000" Convert2NULLStr="" Convert2Bkgd="0" CapMinimum="0" CapMinimumVal="0.000000" CapMaximum="0" CapMaximumVal="100.000000"/>
+			</Data>
+		</Input>
+		<Method EstimationTechnique="Triangulation">
+			<TechniqueParamaters/>
+		</Method>
+		<GridGeometry>
+			<CellParamaters SquareCells="1" XCellSize="5.000000" YCellSize="5.000000"/>
+			<DataCoverage XMin="719950.003075" XMax="721550.002715" YMin="6187000.002913" YMax="6189000.000332"/>
+			<GridBounds ManualSettings="0" ManualXMin="719945.000000" ManualXMax="721565.000000" ManualYMin="6186925.000000" ManualYMax="6189085.000000" NumColumns="325" NumRows="433"/>
+		</GridGeometry>
+		<Output>
+			<Smoothing State="6619252" Factor="9"/>
+			<Clipping Type="None" Buffer="5.000000" Near="40.000000" Far="500.000000" Normalise="0" Tolerance="120.000000"/>
+			<File MultiBand="0" RGB="0" Format="0" Name="C:\Users\RAN\OneDrive\Documents\GeographicInformationSystems\Labs\Lab 10\cn(1)\elevation3_KOTE03.ers"/>
+		</Output>
+	</Operation>
+</root>

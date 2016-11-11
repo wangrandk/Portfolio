@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>7 Functions to do Metric Multidimensional Scaling in R | Gaston Sanchez</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="keywords" content="data analysis, statistics, visualization, R, programming" />
+        <meta name="author" content="Gaston Sanchez" />
+        <meta name="description" content="Website of Gaston Sanchez, statistical programmer and data scientist" />
+        <meta name="viewport" content="width=640px, initial-scale=1.0, maximum-scale=1.0">	
+        <!-- favicon -->
+        <link rel="shortcut icon" href="/images/favicon.ico">
+        <!-- Google Fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400,600" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen, projection" />
+	</head>
+	<body>
+
+
+		<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="header-page">
+
+<h1><a href="/">Gaston Sanchez</a></h1>
+<div id="nav">
+	<ul>
+		<li><a href="/work" class="">Work</a></li>
+		<li><a href="/teaching" class="">Teaching</a></li>
+		<li><a href="/software" class="">Software</a></li>
+		<li><a href="/blog" class="current">Blog</a></li>		
+		<li><a href="/about" class="">About</a></li>
+	</ul>
+</div>
+
+</div>
+
+
+<div class="clear"></div>
+
+<div id="block">
+	<div class="prose"> 
+	<div class="post">
+	<h1> 7 Functions to do Metric Multidimensional Scaling in R </h1>
+	<!-- <span class="date">Posted on 23 Jan 2013</span> -->
+	<h5>Posted on January 23, 2013</h5>
+	
+	<p>In this post we will talk about 7 different ways to perform a metric multidimensional scaling in R.</p>
+
+<!--more-->
+
+<h3 id="multidimensional-scaling">Multidimensional Scaling</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/Multidimensional_scaling">Multidimensional Scaling</a> (MDS), is a set of multivariate data analysis methods that are used to analyze similarities or dissimilarities in data. One of the nice features of MDS is that it allows us to represent the (dis)similarities among pairs of objects as distances between points in a low-dimensional space. Put another way, MDS allows us to visualize the (dis)similarities in a low-dimensional space for exploration and inspection purposes.</p>
+
+<p>The general approach behind MDS consists of calculating a (dis)similarity matrix among pairs of objects (i.e. observations, individuals, samples, etc), and then apply one of the several MDS “models” to obtain the low-dimensional representation. The MDS model to be applied depends on the type of data, and consequently, the type of (dis)similarity measurement that the analyst decides to use.</p>
+
+<h3 id="metric-multidimensional-scaling">Metric Multidimensional Scaling</h3>
+
+<p>Depending on the chosen measurement and the obtained (dis)similarity matrix, MDS can be divided in two main approaches: metric and nonmetric. If the analyzed matrix is based on a <a href="http://en.wikipedia.org/wiki/Metric_(mathematics)">metric distance</a>, we talk about metric MDS, otherwise we talk about nonmetric MDS.</p>
+
+<p>Metric multidimensional scaling, also known as <em>Principal Coordinate Analysis</em> or Classical Scaling, transforms a distance matrix into a set of coordinates such that the (Euclidean) distances derived from these coordinates approximate as well as possible the original distances (do not confuse Principal Coordinate Analysis with Principal Component Analysis). In other words, the advantage of working with metric MDS, is that the relationships among objects can, in most cases, be fully represented in an Euclidean space.</p>
+
+<h3 id="metric-multidimensional-scaling-in-r">Metric Multidimensional Scaling in R</h3>
+
+<p>R has a number of ways to perform metric MDS. The following list shows you 7 different functions to perform metric MDS (with their corresponding packages in parentheses):</p>
+
+<ul>
+  <li><code>cmdscale()</code> (<a href="http://stat.ethz.ch/R-manual/R-patched/library/stats/html/00Index.html">stats</a> by R Development Core Team)</li>
+  <li><code>smacofSym()</code> (<a href="http://cran.r-project.org/web/packages/smacof/index.html">smacof</a> by Jan de Leeuw and Patrick Mair)</li>
+  <li><code>wcmdscale()</code> (<a href="http://cran.r-project.org/web/packages/vegan/index.html">vegan</a> by Jari Oksanen <em>et al</em>)</li>
+  <li><code>pco()</code> (<a href="http://cran.r-project.org/web/packages/ecodist/index.html">ecodist</a> by Sarah Goslee and Dean Urban)</li>
+  <li><code>pco()</code> (<a href="http://cran.r-project.org/web/packages/labdsv/index.html">labdsv</a> by David W. Roberts)</li>
+  <li><code>pcoa()</code> (<a href="http://cran.r-project.org/web/packages/ape/index.html">ape</a> by Emmanuel Paradis <em>et al</em>)</li>
+  <li><code>dudi.pco()</code> (<a href="http://cran.r-project.org/web/packages/ade4/index.html">ade4</a> by Daniel Chessel <em>et al</em>)</li>
+</ul>
+
+<p>You should know that all the previous functions require a distance matrix as the main argument to work with. If you don’t have your data in (dis)similarity matrix format, you can calculate the distance matrix with the function <code>dist()</code>. This is the “work-horse” function in R for calculating distances (e.g. euclidean, manhattan, binary, canberra and maximum). In addition, some of the packages mentioned above provide their own functions for calculating other types of distances.</p>
+
+<h3 id="installing-packages">Installing packages</h3>
+
+<p>Except for <code>cmdscale()</code>, the rest of the functions don’t come with the default distribution of R; this means that you have to install their corresponding packages:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># install packages</span>
+install.packages<span class="p">(</span><span class="kt">c</span><span class="p">(</span><span class="s">&quot;vegan&quot;</span><span class="p">,</span> <span class="s">&quot;ecodist&quot;</span><span class="p">,</span> <span class="s">&quot;labdsv&quot;</span><span class="p">,</span> <span class="s">&quot;ape&quot;</span><span class="p">,</span> <span class="s">&quot;ade4&quot;</span><span class="p">,</span> <span class="s">&quot;smacof&quot;</span><span class="p">))</span></code></pre></div>
+
+<p>Once you have installed the packages, you just need to load them:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># load packages</span>
+<span class="kn">library</span><span class="p">(</span>vegan<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ecodist<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>labdsv<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ape<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>ade4<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>smacof<span class="p">)</span></code></pre></div>
+
+<h3 id="data-eurodist">Data eurodist</h3>
+
+<p>We will use the dataset <code>eurodist</code> that gives the road distances (in km) between 21 cities in Europe. Notice that <code>eurodist</code> is already an object of class <code>"dist"</code> (matrix distance). You can inspect the first 5 elements like so:</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># convert eurodist to matrix</span>
+euromat <span class="o">=</span> <span class="kp">as.matrix</span><span class="p">(</span>eurodist<span class="p">)</span>
+
+<span class="c1"># inspect first five elements</span>
+euromat<span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span> <span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">]</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">##           Athens Barcelona Brussels Calais Cherbourg
+## Athens         0      3313     2963   3175      3339
+## Barcelona   3313         0     1318   1326      1294
+## Brussels    2963      1318        0    204       583
+## Calais      3175      1326      204      0       460
+## Cherbourg   3339      1294      583    460         0</code></pre></div>
+
+<p>The goal is to apply metric MDS to get a visual representation of the distances between European cities. </p>
+
+<h3 id="mds-with-cmdscale">1) MDS with <code>cmdscale()</code></h3>
+
+<p>The most popular function to perform a classical scaling is <code>cmdscale()</code> (which comes with the default distribution of R). Its general usage has the following form:</p>
+
+<p><code>cmdscale(d, k = 2, eig = FALSE, add = FALSE, x.ret = FALSE)</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># 1) MDS &#39;cmdscale&#39;</span>
+mds1 <span class="o">=</span> cmdscale<span class="p">(</span>eurodist<span class="p">,</span> k <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># plot</span>
+plot<span class="p">(</span>mds1<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds1<span class="p">[,</span><span class="m">2</span><span class="p">],</span> type <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> axes <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+     main <span class="o">=</span> <span class="s">&quot;cmdscale (stats)&quot;</span><span class="p">)</span>
+text<span class="p">(</span>mds1<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds1<span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="kp">labels</span><span class="p">(</span>eurodist<span class="p">),</span> cex <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> xpd <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p><img src="/figs/2013-01-23-MDS-in-R/fig1.png" alt="center" /> </p>
+
+<h5 id="figure-1-caption">Figure 1: Caption</h5>
+
+<p>As you can see, the obtained graphic allows us to represent the distances between cities in a two-dimensional space. However, the representation is not identical to a geographical map of Europe: Athens is in the north while Stockholm is in the south. This “anomaly” reflects the fact that the representation is not unique; if we wanted to get a more accurate geographical representation, we would need to invert the vertical axis.</p>
+
+<h3 id="mds-with-wcmdscale">2) MDS with <code>wcmdscale()</code></h3>
+
+<p>The package <code>"vegan"</code> provides the function <code>wcmdscale()</code> (Weighted Classical Multidimensional Scaling). Its general usage has the following form:</p>
+
+<p><code>wcmdscale(d, k, eig = FALSE, add = FALSE, x.ret = FALSE, w)</code></p>
+
+<p>If we specify the vector of the weights <code>w</code> as a vector of ones, <code>wcmdscale()</code> will give ordinary multidimensional scaling.</p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># 2) MDS &#39;wcmdscale&#39;</span>
+mds2 <span class="o">=</span> wcmdscale<span class="p">(</span>eurodist<span class="p">,</span> k<span class="o">=</span><span class="m">2</span><span class="p">,</span> w<span class="o">=</span><span class="kp">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">21</span><span class="p">))</span>
+
+<span class="c1"># plot</span>
+plot<span class="p">(</span>mds2<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds2<span class="p">[,</span><span class="m">2</span><span class="p">],</span> type <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+     axes <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> main <span class="o">=</span> <span class="s">&quot;wcmdscale (vegan)&quot;</span><span class="p">)</span>
+text<span class="p">(</span>mds2<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds2<span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="kp">labels</span><span class="p">(</span>eurodist<span class="p">),</span> cex <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> xpd <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p><img src="/figs/2013-01-23-MDS-in-R/fig2.png" alt="center" /> </p>
+
+<h3 id="mds-with-pco-package-ecodist">3) MDS with <code>pco()</code> (package ecodist)</h3>
+
+<p>The package <code>"ecodist"</code> provides the function <code>pco()</code> (Principal Coordinates Analysis). Its general usage has the following form:</p>
+
+<p><code>pco(x, negvals = "zero", dround = 0)</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># 3) MDS &#39;pco&#39;</span>
+mds3 <span class="o">=</span> pco<span class="p">(</span>eurodist<span class="p">)</span>
+
+<span class="c1"># plot</span>
+plot<span class="p">(</span>mds3<span class="o">$</span>vectors<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds3<span class="o">$</span>vectors<span class="p">[,</span><span class="m">2</span><span class="p">],</span> type <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+     axes <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> main <span class="o">=</span> <span class="s">&quot;pco (ecodist)&quot;</span><span class="p">)</span>
+text<span class="p">(</span>mds3<span class="o">$</span>vectors<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds3<span class="o">$</span>vectors<span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="kp">labels</span><span class="p">(</span>eurodist<span class="p">),</span> 
+     cex <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> xpd <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p><img src="/figs/2013-01-23-MDS-in-R/fig3.png" alt="center" /> </p>
+
+<h3 id="mds-with-pco-package-labdsv">4) MDS with <code>pco()</code> (package labdsv)</h3>
+
+<p>The package <code>"labdsv"</code> also provides a function <code>pco()</code> (Principal Coordinates Analysis). Its general usage has the following form:</p>
+
+<p><code>pco(dis, k = 2)</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># 4) MDS &#39;pco&#39;</span>
+mds4 <span class="o">=</span> pco<span class="p">(</span>eurodist<span class="p">,</span> k <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># plot</span>
+plot<span class="p">(</span>mds4<span class="o">$</span>points<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds4<span class="o">$</span>points<span class="p">[,</span><span class="m">2</span><span class="p">],</span> type <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+     axes <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> main <span class="o">=</span> <span class="s">&quot;pco (labdsv)&quot;</span><span class="p">)</span>
+text<span class="p">(</span>mds4<span class="o">$</span>points<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds4<span class="o">$</span>points<span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="kp">labels</span><span class="p">(</span>eurodist<span class="p">),</span> 
+     cex <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> xpd <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p><img src="/figs/2013-01-23-MDS-in-R/fig4.png" alt="center" /> </p>
+
+<h3 id="mds-with-pcoa">5) MDS with <code>pcoa()</code></h3>
+
+<p>The package <code>"ape"</code> provides the function <code>pcoa()</code> (Principal Coordinates Analysis). Its general usage has the following form:</p>
+
+<p><code>pcoa(D, correction="none", rn = NULL)</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># 5) MDS &#39;pcoa&#39;</span>
+mds5 <span class="o">=</span> pcoa<span class="p">(</span>eurodist<span class="p">)</span>
+
+<span class="c1"># plot</span>
+plot<span class="p">(</span>mds5<span class="o">$</span>vectors<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds5<span class="o">$</span>vectors<span class="p">[,</span><span class="m">2</span><span class="p">],</span> type <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+     axes <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> main <span class="o">=</span> <span class="s">&quot;pcoa (ape)&quot;</span><span class="p">)</span>
+text<span class="p">(</span>mds5<span class="o">$</span>vectors<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds5<span class="o">$</span>vectors<span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="kp">labels</span><span class="p">(</span>eurodist<span class="p">),</span> 
+     cex <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> xpd <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p><img src="/figs/2013-01-23-MDS-in-R/fig5.png" alt="center" /> </p>
+
+<h3 id="mds-with-dudipco">6) MDS with <code>dudi.pco()</code></h3>
+
+<p>The package <code>"ade4"</code> provides the function <code>dudi.pco()</code> (Principal Coordinates Analysis). Its general usage has the following form:</p>
+
+<p><code>dudi.pco(d, row.w = "uniform", scannf = TRUE, nf = 2, full = FALSE, tol = 1e-07)</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># 6) MDS &#39;dudi.pco&#39;</span>
+mds6 <span class="o">=</span> dudi.pco<span class="p">(</span>eurodist<span class="p">,</span> scannf <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> nf <span class="o">=</span> <span class="m">2</span><span class="p">)</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">## Warning: Non euclidean distance</code></pre></div>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># plot</span>
+plot<span class="p">(</span>mds6<span class="o">$</span>li<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds6<span class="o">$</span>li<span class="p">[,</span><span class="m">2</span><span class="p">],</span> type <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+     axes <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> main <span class="o">=</span> <span class="s">&quot;dudi.pco (ade4)&quot;</span><span class="p">)</span>
+text<span class="p">(</span>mds6<span class="o">$</span>li<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds6<span class="o">$</span>li<span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="kp">labels</span><span class="p">(</span>eurodist<span class="p">),</span> cex <span class="o">=</span> <span class="m">0.9</span><span class="p">)</span></code></pre></div>
+
+<p><img src="/figs/2013-01-23-MDS-in-R/fig6.png" alt="center" /> </p>
+
+<h3 id="mds-with-smacofsym">7) MDS with <code>smacofSym()</code></h3>
+
+<p>The package <code>"smacof"</code> provides the function <code>smacofSym()</code> (Multidimensional scaling (stress minimization: SMACOF) on symmetric dissimilarity matrix.). This function uses a majorization approach to get the solution (more info in this <a href="http://cran.r-project.org/web/packages/smacof/vignettes/smacof.pdf">ade4</a>. Its general usage has the following form:</p>
+
+<p><code>smacofSym(delta, ndim = 2, weightmat = NULL, init = NULL, 
+    metric = TRUE, ties = "primary", verbose = FALSE, 
+    relax = FALSE, modulus = 1, itmax = 1000, eps = 1e-06)</code></p>
+
+<div class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1"># 7) MDS &#39;smacofSym&#39;</span>
+mds7 <span class="o">=</span> smacofSym<span class="p">(</span>eurodist<span class="p">,</span> ndim <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># plot</span>
+plot<span class="p">(</span>mds7<span class="o">$</span>conf<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds7<span class="o">$</span>conf<span class="p">[,</span><span class="m">2</span><span class="p">],</span> type <span class="o">=</span> <span class="s">&quot;n&quot;</span><span class="p">,</span> xlab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> ylab <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+     axes <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> main <span class="o">=</span> <span class="s">&quot;smacofSym (smacof)&quot;</span><span class="p">)</span>
+text<span class="p">(</span>mds7<span class="o">$</span>conf<span class="p">[,</span><span class="m">1</span><span class="p">],</span> mds7<span class="o">$</span>conf<span class="p">[,</span><span class="m">2</span><span class="p">],</span> <span class="kp">labels</span><span class="p">(</span>eurodist<span class="p">),</span> 
+     cex <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> xpd <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span></code></pre></div>
+
+<p><img src="/figs/2013-01-23-MDS-in-R/fig7.png" alt="center" /> </p>
+
+
+
+</div>
+
+<hr>
+<p></p>
+
+<div class="meta">
+	
+	
+	<span class="categories">
+		Published in categories
+		
+		<a href="/blog/categories/#how-to" title="how-to">how-to</a>&nbsp;
+		
+	</span>
+	
+	
+	
+	<span class="tags">
+		Tagged with 
+		
+		<a href="/blog/tags/#mds" title="mds">mds</a>&nbsp;
+		
+		<a href="/blog/tags/#cmdscale" title="cmdscale">cmdscale</a>&nbsp;
+		
+		<a href="/blog/tags/#pco" title="pco">pco</a>&nbsp;
+		
+		<a href="/blog/tags/#scaling" title="scaling">scaling</a>&nbsp;
+		
+		<a href="/blog/tags/#R" title="R">R</a>&nbsp;
+		
+		<a href="/blog/tags/#multivariate" title="multivariate">multivariate</a>&nbsp;
+		
+	</span>
+	
+</div>
+
+
+<div class="previous_next">
+	
+	  <a href="/blog/how-to/2013/01/10/Gauge-Chart-in-R.html" title="Previous post">&larr; previous</a>
+	
+	&nbsp;&nbsp;
+	
+	  <a href="/blog/got-plot/how-to/2013/02/02/Arc-Diagrams-in-R-Les-Miserables.html" title="Next post">next &rarr;</a>
+	
+	<br>
+	<p>
+	<a class="greenbutton" href="/blog/archive/" title="an archive of all posts">See all posts &rarr;</a>
+	</p>
+</div>
+
+	</div>
+</div>
+
+
+<div id="footer">
+
+<div id="footer">
+	&copy; <a href="/">Gaston Sanchez</a>. All contents under 
+	<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">(CC) BY-NC-SA license</a>, 
+	unless otherwise noted.
+	<br/><br/>
+	Did you find this site useful? If yes, consider helping me with my  
+	<a href="http://amzn.com/w/A8P707HJ94QI" target="_blank">wishlist</a>.
+</div>
+
+
+</div>
+
+
+
+
+		<!-- Google Analytics -->
+		<script>
+  		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  	  ga('create', 'UA-46765288-1', 'gastonsanchez.com');
+  		  ga('send', 'pageview');
+
+		</script>
+		<!-- Google Analytics end -->
+
+	</body>
+</html>

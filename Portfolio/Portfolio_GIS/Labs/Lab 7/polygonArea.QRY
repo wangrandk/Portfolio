@@ -1,0 +1,7 @@
+Fields {roofs,Sum(Area(obj,"sq m"))"Area_sq m"}
+Tables {Building}
+Where {}
+Group {roofs}
+Order {2 desc}
+Into {RoofsArea}
+Browse
